@@ -11,9 +11,16 @@ body {
 }
 
 .content {
-    max-width: 120rem;
-    grid-column-start: 2;
+    max-width: 1200px;
     width: 100%;
+    grid-column-start: 2;
+    justify-self: center;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error {

@@ -11,10 +11,19 @@ body {
       grid-template-columns: 2.5rem 1fr 2.5rem; }
 
 .content {
-  max-width: 120rem;
+  max-width: 1200px;
+  width: 100%;
   -ms-grid-column: 2;
       grid-column-start: 2;
-  width: 100%; }
+  justify-self: center; }
+
+.inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center; }
 
 .error h2 {
   font-size: 3rem; }
@@ -45,6 +54,7 @@ body {
       grid-column-start: 2;
   display: -ms-grid;
   display: grid;
+  justify-self: center;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   color: #efefef;
@@ -53,7 +63,8 @@ body {
   -ms-flex-pack: justify;
       justify-content: space-between;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  max-width: 1200px; }
   .nav__item {
     transition: 0.3s ease;
     list-style-type: none;
@@ -114,10 +125,6 @@ body {
     height: 2.5rem;
     width: 100%; }
     .nav__search--input {
-      background: #141414;
-      border: 0;
-      color: #efefef;
-      font-family: inherit;
       height: 2.5rem;
       margin-right: 1rem;
       width: 100%;
@@ -553,5 +560,48 @@ template {
  */
 [hidden] {
   display: none; }
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  background: #141414;
+  border: 0;
+  color: #efefef;
+  font-family: inherit;
+  font-size: 1.5em; }
+  input.input--error,
+  textarea.input--error {
+    border-color: #ef3737; }
+
+label {
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  display: block; }
+
+form {
+  background: #1e1e1e;
+  padding: 2rem 3rem; }
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 4rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .form__header {
+    margin: 0;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    text-align: center; }
+
+.button {
+  font-size: 1.5em;
+  border: 0;
+  background: #3495ce;
+  color: #efefef;
+  font-family: inherit;
+  font-weight: 600; }
 
 /*# sourceMappingURL=style.css.map*/
