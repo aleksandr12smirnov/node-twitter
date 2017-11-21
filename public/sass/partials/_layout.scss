@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #191919;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    @media all and (max-width: 1200px) {
+        padding: 2rem;
+    }
+}
