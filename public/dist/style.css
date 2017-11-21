@@ -8,14 +8,27 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5rem 1fr 2.5rem;
-      grid-template-columns: 2.5rem 1fr 2.5rem; }
+      grid-template-columns: 2.5rem 1fr 2.5rem;
+  -ms-grid-rows: min-content min-content 1fr;
+      grid-template-rows: min-content min-content 1fr; }
 
 .content {
   max-width: 1200px;
   width: 100%;
   -ms-grid-column: 2;
       grid-column-start: 2;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
   justify-self: center; }
+
+.flash-banner {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  justify-self: center;
+  max-width: 1200px;
+  width: 100%; }
 
 .inner {
   display: -ms-flexbox;
@@ -41,6 +54,8 @@ body {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5rem auto 2.5rem;
@@ -122,8 +137,7 @@ body {
         justify-content: flex-end;
     padding-right: 1rem;
     border-right: 0.1rem solid #323232;
-    height: 2.5rem;
-    width: 100%; }
+    height: 2.5rem; }
     .nav__search--input {
       height: 2.5rem;
       margin-right: 1rem;
@@ -136,17 +150,63 @@ body {
       color: #323232; }
   .nav__avatar {
     margin: 0 1rem;
-    color: #3495ce; }
+    color: #3495ce;
+    height: 100%;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    position: relative; }
+    .nav__avatar:hover .nav__avatar--dropdown {
+      display: -ms-flexbox;
+      display: flex;
+      color: #ccc; }
+    .nav__avatar--dropdown {
+      background: #1e1e1e;
+      display: none;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      z-index: 1;
+      padding: 1rem;
+      top: 4rem;
+      left: 50%;
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+      position: absolute;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.23); }
+      .nav__avatar--dropdown:hover {
+        display: -ms-flexbox;
+        display: flex; }
+      .nav__avatar--dropdown:before {
+        position: relative;
+        top: -2rem;
+        left: 4rem;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #1e1e1e; }
+      .nav__avatar--dropdown button {
+        padding: 0.75rem 2.5rem;
+        margin: 0 0 1rem 0;
+        width: 100%;
+        cursor: pointer; }
     .nav__avatar--image {
-      font-size: 3rem; }
-  .nav__tweet-btn {
+      font-size: 3rem;
+      position: relative; }
+  .nav__btn {
     background: #3495ce;
     border: 0;
-    color: inherit;
+    color: #efefef;
     font-weight: 600;
     font-size: 1.5rem;
     padding: 0.75rem 1.5rem;
-    border-radius: 100rem; }
+    border-radius: 100rem;
+    margin-left: 1rem; }
 
 html {
   box-sizing: border-box; }
@@ -603,5 +663,59 @@ form {
   color: #efefef;
   font-family: inherit;
   font-weight: 600; }
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-10px); }
+  50% {
+    transform: translateX(10px); }
+  100% {
+    transform: translateX(0px); } }
+
+.flash {
+  background: #141414;
+  font-size: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  margin: 1rem 0;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  display: -ms-flexbox;
+  display: flex;
+  animation: slideIn forwards 0.2s ease-in-out 2;
+  animation-timing-function: cubic-bezier(0.01, 1.68, 0.58, 1); }
+  .flash + .flash {
+    animation-delay: 0.55s; }
+    .flash + .flash + .flash {
+      animation-delay: 0.6s; }
+  .flash__text {
+    -ms-flex: 1;
+        flex: 1; }
+  .flash__remove {
+    background: none;
+    border: 0;
+    color: #efefef;
+    font-size: 1.5rem; }
+  .flash:after {
+    content: '';
+    display: block;
+    background: #323232;
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    top: 3px;
+    left: 3px;
+    z-index: -1;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px; }
+  .flash--success {
+    background: #36cc36; }
+  .flash--error {
+    background: #ef3737; }
+  .flash--info {
+    background: #3495ce; }
+  .flash p {
+    margin: 0; }
 
 /*# sourceMappingURL=style.css.map*/

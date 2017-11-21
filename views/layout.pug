@@ -32,14 +32,21 @@ html
               input.nav__search--input(type="text")
               a.nav__search--icon(href="#")
                 i.material-icons search
-            a.nav__avatar(href="/user/settings")
-              i.material-icons.nav__avatar--image mood
-            button.nav__tweet-btn Tweet
+            .nav__avatar
+                i.material-icons.nav__avatar--image mood
+                  div.nav__avatar--dropdown
+                    if !user
+                      a(href="/login")
+                        button.nav__btn Login
+                    else
+                      a(href="/logout")
+                        button.nav__btn Logout
+            button.nav__btn Tweet
 
 
     block messages
       if Object.keys(locals.flashes).length
-        .inner
+        .flash-banner
           .flash-messages
             - const categories = Object.keys(locals.flashes)
             each category in categories

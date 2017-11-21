@@ -5,9 +5,17 @@ const { catchErrors } = require('../handlers/errorHandlers');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 
+/*
+    Index Route
+*/
+
 router.get('/', appController.index);
 
+/*
+    Auth Routes (Login Logout Register)
+*/
 router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
 router.get('/register', userController.registerForm);
 router.post(
     '/register',
@@ -15,5 +23,6 @@ router.post(
     catchErrors(userController.register),
     authController.login
 );
+router.get('/logout', authController.logout);
 
 module.exports = router;
