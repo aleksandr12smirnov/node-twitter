@@ -16,14 +16,15 @@ html
               a.nav__link(href="/")
                 i.material-icons.nav__link--icon home
                 span.nav__link--text Home
-            li.nav__item(class=(currentPath.startsWith("/notifications") ? "nav__item--active" : ""))
-              a.nav__link(href="/notifications")
-                i.material-icons.nav__link--icon notifications
-                span.nav__link--text Notifications
-            li.nav__item(class=(currentPath.startsWith("/messages") ? "nav__item--active" : ""))
-              a.nav__link(href="/messages")
-                i.material-icons.nav__link--icon email
-                span.nav__link--text Messages
+            if user
+              li.nav__item(class=(currentPath.startsWith("/notifications") ? "nav__item--active" : ""))
+                a.nav__link(href="/notifications")
+                  i.material-icons.nav__link--icon notifications
+                  span.nav__link--text Notifications
+              li.nav__item(class=(currentPath.startsWith("/messages") ? "nav__item--active" : ""))
+                a.nav__link(href="/messages")
+                  i.material-icons.nav__link--icon email
+                  span.nav__link--text Messages
           .nav__brand
             a.nav__link(href="/")
               i.fa.fa-circle.fa-2x(aria-hidden="true")
@@ -38,10 +39,13 @@ html
                     if !user
                       a(href="/login")
                         button.nav__btn Login
+                      a(href="/register")
+                        button.nav__btn Sign Up
                     else
                       a(href="/logout")
                         button.nav__btn Logout
-            button.nav__btn Tweet
+            if user
+              button.nav__btn Tweet
 
 
     block messages

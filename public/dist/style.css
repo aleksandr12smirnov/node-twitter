@@ -1,3 +1,9 @@
+/*
+    Color Vars
+*/
+/*
+    Box-Shadow Vars
+*/
 html {
   font-size: 10px;
   font-family: 'Roboto', sans-serif;
@@ -38,6 +44,20 @@ body {
   -ms-flex-align: center;
       align-items: center; }
 
+.aside {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem; }
+  .aside__left {
+    -ms-grid-column: 1;
+        grid-column-start: 1; }
+  .aside__right {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    justify-self: end; }
+
 .error h2 {
   font-size: 3rem; }
 
@@ -61,7 +81,7 @@ body {
   -ms-grid-columns: 2.5rem auto 2.5rem;
       grid-template-columns: 2.5rem auto 2.5rem;
   height: 5rem;
-  background: #1e1e1e;
+  background: #212121;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.23); }
 
 .nav {
@@ -118,11 +138,17 @@ body {
     .nav__controls--left {
       -ms-grid-column: 1;
           grid-column-start: 1;
-      justify-self: start; }
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
     .nav__controls--right {
       -ms-grid-column: 3;
           grid-column-start: 3;
-      justify-self: end; }
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
   .nav__brand {
     -ms-grid-column: 2;
         grid-column-start: 2;
@@ -152,7 +178,6 @@ body {
     margin: 0 1rem;
     color: #3495ce;
     height: 100%;
-    width: 100%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -642,7 +667,7 @@ label {
   display: block; }
 
 form {
-  background: #1e1e1e;
+  background: #212121;
   padding: 2rem 3rem; }
 
 .form {
@@ -655,6 +680,8 @@ form {
     font-size: 3rem;
     padding-bottom: 1rem;
     text-align: center; }
+  .form__info-text {
+    font-size: 1.3rem; }
 
 .button {
   font-size: 1.5em;
@@ -663,6 +690,9 @@ form {
   color: #efefef;
   font-family: inherit;
   font-weight: 600; }
+
+a:visited {
+  color: #5daad8; }
 
 @keyframes slideIn {
   0% {
@@ -717,5 +747,22 @@ form {
     background: #3495ce; }
   .flash p {
     margin: 0; }
+
+.landing__header {
+  font-size: 5rem;
+  margin: 3rem 0 4rem 0; }
+
+.landing__info-text {
+  font-size: 2em; }
+  .landing__info-text--header {
+    font-size: 3em; }
+
+.landing__info-box {
+  background: #212121;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 3rem; }
+
+.landing__form {
+  margin: 0; }
 
 /*# sourceMappingURL=style.css.map*/

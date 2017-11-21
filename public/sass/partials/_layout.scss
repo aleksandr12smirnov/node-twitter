@@ -31,6 +31,19 @@ body {
     align-items: center;
 }
 
+.aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+    &__left {
+        grid-column-start: 1;
+    }
+    &__right {
+        grid-column-start: 2;
+        justify-self: end;
+    }
+}
+
 .error {
     h2 {
         font-size: 3rem;

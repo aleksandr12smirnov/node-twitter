@@ -23,7 +23,7 @@ label {
 }
 
 form {
-    background: #1e1e1e;
+    background: #212121;
     padding: 2rem 3rem;
 }
 
@@ -37,5 +37,8 @@ form {
         font-size: 3rem;
         padding-bottom: 1rem;
         text-align: center;
+    }
+    &__info-text {
+        font-size: 1.3rem;
     }
 }

@@ -9,6 +9,7 @@ const userSchema = new Schema({
     username: {
         type: String,
         unique: true,
+        lowercase: true,
         required: 'You must supply a Username!'
     },
     email: {

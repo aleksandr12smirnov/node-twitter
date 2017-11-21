@@ -15,12 +15,13 @@ router.get('/', appController.index);
     Auth Routes (Login Logout Register)
 */
 router.get('/login', userController.loginForm);
-router.post('/login', authController.login);
+router.post('/login', authController.usernameToLowerCase, authController.login);
 router.get('/register', userController.registerForm);
 router.post(
     '/register',
     userController.validateRegister,
     catchErrors(userController.register),
+    authController.usernameToLowerCase,
     authController.login
 );
 router.get('/logout', authController.logout);

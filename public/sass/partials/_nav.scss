@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: 2.5rem auto 2.5rem;
     height: 5rem;
-    background: #1e1e1e;
+    background: #212121;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19),
         0 0.6rem 0.6rem rgba(0, 0, 0, 0.23);
 }
@@ -59,11 +59,13 @@
         width: 100%;
         &--left {
             grid-column-start: 1;
-            justify-self: start;
+            display: flex;
+            justify-content: flex-start;
         }
         &--right {
             grid-column-start: 3;
-            justify-self: end;
+            display: flex;
+            justify-content: flex-end;
         }
     }
     &__brand {
@@ -95,7 +97,6 @@
         margin: 0 1rem;
         color: $accent;
         height: 100%;
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
