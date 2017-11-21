@@ -1,23 +1,32 @@
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
 html {
     font-size: 10px;
     font-family: 'Roboto', sans-serif;
+    color: $text-color;
 }
 
 body {
-    margin: 0;
     background: #191919;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 2.5rem;
 }
 
-.inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    @media all and (max-width: 1200px) {
-        padding: 2rem;
+.content {
+    max-width: 120rem;
+    grid-column-start: 2;
+    width: 100%;
+}
+
+.error {
+    h2 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+    pre {
+        color: $text-color;
+        font-size: 1.5rem;
+        line-height: 2;
+        white-space: pre-line;
     }
 }

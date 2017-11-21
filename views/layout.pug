@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= `${title} | ${h.siteName}`
-    link(rel='stylesheet', href='/dist/style.css')
+    link(rel="stylesheet", href="/dist/style.css")
     link(rel="shortcut icon" type="image/png" href="/images/icons/twitter.svg")
     link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
@@ -12,27 +12,27 @@ html
       header.top
         nav.nav
           .nav__controls.nav__controls--left
-            li.nav__item.nav__item--active
-              a.nav__link(href='/')
+            li.nav__item(class=(currentPath == "/" ? "nav__item--active" : ""))
+              a.nav__link(href="/")
                 i.material-icons.nav__link--icon home
                 span.nav__link--text Home
-            li.nav__item
-              a.nav__link(href='/notifications')
+            li.nav__item(class=(currentPath.startsWith("/notifications") ? "nav__item--active" : ""))
+              a.nav__link(href="/notifications")
                 i.material-icons.nav__link--icon notifications
                 span.nav__link--text Notifications
-            li.nav__item
-              a.nav__link(href='/')
+            li.nav__item(class=(currentPath.startsWith("/messages") ? "nav__item--active" : ""))
+              a.nav__link(href="/messages")
                 i.material-icons.nav__link--icon email
                 span.nav__link--text Messages
           .nav__brand
-            a.nav__link(href='/')
-              i.fa.fa-twitter.fa-2x(aria-hidden='true')
+            a.nav__link(href="/")
+              i.fa.fa-twitter.fa-2x(aria-hidden="true")
           .nav__controls.nav__controls--right
             .nav__search
-              input.nav__search--input(type='text')
-              a.nav__search--icon(href='#')
+              input.nav__search--input(type="text")
+              a.nav__search--icon(href="#")
                 i.material-icons search
-            a.nav__avatar(href='/user/settings')
+            a.nav__avatar(href="/user/settings")
               i.material-icons.nav__avatar--image mood
             button.nav__tweet-btn
               | Tweet
