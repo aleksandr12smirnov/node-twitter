@@ -1,4 +1,7 @@
 extends layout
 
+include mixins/_tweetCard
+
 block content
   h1 Index
+  +tweetCard({text: 'Test'})

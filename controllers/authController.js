@@ -14,6 +14,9 @@ exports.logout = (req, res) => {
 };
 
 exports.usernameToLowerCase = function(req, res, next) {
+  // set handle with case in tact
+  req.body.handle = req.body.username;
+  // set username to lowercase for case-insensitive logins
   req.body.username = req.body.username.toLowerCase();
   next();
 };

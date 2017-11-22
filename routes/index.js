@@ -20,8 +20,8 @@ router.get('/register', userController.registerForm);
 router.post(
   '/register',
   userController.validateRegister,
-  catchErrors(userController.register),
   authController.usernameToLowerCase,
+  catchErrors(userController.register),
   authController.login
 );
 router.get('/logout', authController.logout);

@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 const validator = require('validator');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     unique: true,
@@ -23,6 +22,10 @@ const userSchema = new Schema({
   name: {
     type: String,
     required: 'You must supply a name!'
+  },
+  handle: {
+    type: String,
+    required: 'You must supply a handle!'
   },
   resetPasswordToken: String,
   resetPasswordExpires: Date
