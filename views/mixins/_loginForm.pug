@@ -1,12 +1,12 @@
 mixin loginForm()
-    form.form(action="/login" method="POST" class!=attributes.class)
-        h2.form__header Login
-        label(for="username") Username
-        input(type="text" name="username")
-        label(for="password") Password
-        input(type="password" name="password")
-        input.button(type="submit" value="Log In")
-        p.form__info-text
-            | New here?
-            a(href="/register") sign up
-            | for a new account!
+  form.form(action="/login" method="POST" class!=attributes.class)
+    h2.form__header Login
+    label(for="username") Username
+    input(type="text" name="username")
+    label(for="password") Password
+    input(type="password" name="password")
+    input.button(type="submit" value="Log In")
+    p.form__info-text
+      | New here?
+      a(href="/register") sign up
+      | for a new account!

@@ -34,13 +34,13 @@ app.use(expressValidator());
 app.use(cookieParser());
 
 app.use(
-    session({
-        secret: process.env.SECRET,
-        key: process.env.KEY,
-        resave: false,
-        saveUninitialized: false,
-        store: new MongoStore({ mongooseConnection: mongoose.connection })
-    })
+  session({
+    secret: process.env.SECRET,
+    key: process.env.KEY,
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+  })
 );
 
 // // Passport JS used to handle logins
@@ -51,16 +51,16 @@ app.use(flash());
 
 // pass variables to templates + all requests
 app.use((req, res, next) => {
-    res.locals.h = helpers;
-    res.locals.flashes = req.flash();
-    res.locals.user = req.user || null;
-    res.locals.currentPath = req.path;
-    next();
+  res.locals.h = helpers;
+  res.locals.flashes = req.flash();
+  res.locals.user = req.user || null;
+  res.locals.currentPath = req.path;
+  next();
 });
 
 app.use((req, res, next) => {
-    req.login = promisify(req.login, req);
-    next();
+  req.login = promisify(req.login, req);
+  next();
 });
 
 // use routes
@@ -74,7 +74,7 @@ app.use(errorHandlers.flashValidationErrors);
 
 // dev error handler
 if (app.get('env') === 'development') {
-    app.use(errorHandlers.developmentErrors);
+  app.use(errorHandlers.developmentErrors);
 }
 
 // production error handler

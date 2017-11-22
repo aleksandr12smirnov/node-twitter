@@ -3,15 +3,15 @@ extends layout
 include mixins/_loginForm
 
 block content
-    .inner.landing
-        h2.landing__header Welcome
-        .aside
-            .aside__left
-                .landing__info-box
-                    h3.landing__info-text--header Welcome to Node Twitter!
-                    p.landing__info-text 
-                        | Hey, welcome to the landing page! If your new here go ahead and click the 
-                        a(href="/register") sign up
-                        | , otherwise login to access your profile.
-            .aside__right
-                +loginForm(class="landing__form")
+  .inner.landing
+    h2.landing__header Welcome
+    .aside
+      .aside__left
+        .landing__info-box
+          h3.landing__info-text--header Welcome to Node Twitter!
+          p.landing__info-text
+            | Hey, welcome to the landing page! If your new here go ahead and click the 
+            a(href='/register') sign up
+            | , otherwise login to access your profile.
+      .aside__right
+        +loginForm(class="landing__form")

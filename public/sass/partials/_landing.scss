@@ -1,20 +1,20 @@
 .landing {
-    &__header {
-        font-size: 5rem;
-        margin: 3rem 0 4rem 0;
+  &__header {
+    font-size: 5rem;
+    margin: 3rem 0 4rem 0;
+  }
+  &__info-text {
+    &--header {
+      font-size: 3em;
     }
-    &__info-text {
-        &--header {
-            font-size: 3em;
-        }
-        font-size: 2em;
-    }
-    &__info-box {
-        background: #212121;
-        box-shadow: $shadow2;
-        padding: 3rem;
-    }
-    &__form {
-        margin: 0;
-    }
+    font-size: 2em;
+  }
+  &__info-box {
+    background: #212121;
+    box-shadow: $shadow2;
+    padding: 3rem;
+  }
+  &__form {
+    margin: 0;
+  }
 }
