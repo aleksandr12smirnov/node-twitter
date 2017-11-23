@@ -1,3 +1,24 @@
-mixin tweetCard(tweet)
-  .tweet
-    pre= h.dump(tweet)
+mixin tweetCard(tweet, author = user)
+  .tweet-card
+      pre= h.dump(tweet)
+      img(src=`/uploads/${tweet.author.avatar || 'user.jpg'}`).tweet-card__author-image
+      .tweet-card__content
+        .tweet-card__header
+          h3.tweet-card__name= author.name
+          p.tweet-card__handle @#{author.handle}
+          p.tweet-card__time= h.moment(tweet.created).fromNow()
+        .tweet-card__body
+          p.tweet-card__text= tweet.body
+          if(tweet.image)
+            img(src=`/uploads/${tweet.image}`).tweet-card__image
+        .tweet-card__controls
+          span.tweet-card__controls--replies
+            i.fa.fa-comments-o.fa-2x
+            p.tweet-card__controls--replies-count= tweet.replies.length
+          span.tweet-card__controls--retweet
+            i.fa.fa-retweet.fa-2x
+            p.tweet-card__controls--retweet-count= tweet.retweets
+          span.tweet-card__controls--like
+            i.fa.fa-heart-o.fa-2x
+            p.tweet-card__controls--like-count= tweet.likes
+          span.tweet-card__controls--message
