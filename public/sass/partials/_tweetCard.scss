@@ -1,6 +1,62 @@
 .tweet-card {
+  width: 60rem;
   background: $container1;
-  padding: 0.5rem 2rem;
+  padding: 2rem;
   box-shadow: $shadow1;
   margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-column-gap: 2rem;
+  &__author-image {
+    grid-column-start: 1;
+    border-radius: 100%;
+  }
+  &__name {
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  &__handle {
+    font-weight: 200;
+    color: darken($text-color, 25%);
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+  &__time {
+    color: darken($text-color, 25%);
+    font-size: 1.3rem;
+    &:before {
+      content: '\00b7';
+      margin-right: 0.5rem;
+    }
+  }
+  &__content {
+    grid-column-start: 2;
+    font-size: 1.5rem;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  &__text {
+    margin: 0 0 1rem 0;
+  }
+  &__body {
+    margin-bottom: 1rem;
+  }
+  &__controls {
+    display: flex;
+    span {
+      width: 8rem;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 2rem;
+      }
+      p {
+        margin: 0.5rem 0;
+      }
+    }
+  }
 }

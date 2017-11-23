@@ -5,5 +5,7 @@ include mixins/_tweetForm
 
 block content
   +tweetForm()
-  each tweet in tweets
-    +tweetCard(tweet)
+  ul.feed
+    each tweet in tweets
+      li.feed__item
+        +tweetCard(tweet)
