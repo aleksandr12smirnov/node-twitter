@@ -1,0 +1,9 @@
+mixin tweetForm()
+  form(action="/tweet/new" method="POST" class="tweet-form" enctype="multipart/form-data")
+    .tweet-form__body
+      textarea(name="body" id="tweet-input" placeholder="What's happening?" rows="5").tweet-form__input
+    .tweet-form__controls
+      div(onClick="document.querySelector('#image-input').click()" class="tweet-form__image-btn")
+        i.fa.fa-picture-o.fa-2x
+      input(type="file" name="image" id="image-input" accept="image/gif, image/png, image/jpeg" style="display: none").tweet-form__btn
+      button(type="submit" id="tweet-submit" disabled).tweet-btn Tweet

@@ -1,7 +1,9 @@
 extends layout
 
 include mixins/_tweetCard
+include mixins/_tweetForm
 
 block content
-  h1 Index
-  +tweetCard({text: 'Test'})
+  +tweetForm()
+  each tweet in tweets
+    +tweetCard(tweet)

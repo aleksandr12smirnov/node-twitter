@@ -16,14 +16,25 @@ const tweetSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  likes: Number,
-  retweets: Number,
+  likes: {
+    type: Number,
+    default: 0
+  },
+  retweets: {
+    type: Number,
+    default: 0
+  },
+  image: String,
   replies: [
     {
       type: mongoose.Schema.ObjectId,
       ref: 'Tweet'
     }
-  ]
+  ],
+  replyTo: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Tweet'
+  }
 });
 
 module.exports = mongoose.model('Tweet', tweetSchema);

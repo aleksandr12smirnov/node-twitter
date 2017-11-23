@@ -81,6 +81,74 @@
 
 __webpack_require__(0);
 
+var _bling = __webpack_require__(8);
+
+var _disableButton = __webpack_require__(9);
+
+var _disableButton2 = _interopRequireDefault(_disableButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
+
+/***/ }),
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// based on https://gist.github.com/paulirish/12fb951a8b893a454b32
+
+var $ = document.querySelector.bind(document);
+var $$ = document.querySelectorAll.bind(document);
+
+Node.prototype.on = window.on = function (name, fn) {
+  this.addEventListener(name, fn);
+};
+
+NodeList.prototype.__proto__ = Array.prototype; // eslint-disable-line
+
+NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn) {
+  this.forEach(function (elem) {
+    elem.on(name, fn);
+  });
+};
+
+exports.$ = $;
+exports.$$ = $$;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function disableButton(input, button) {
+  input.on('keyup', function () {
+    if (input.value.length > 0) {
+      button.disabled = false;
+    } else {
+      button.disabled = true;
+    }
+  });
+}
+
+exports.default = disableButton;
+
 /***/ })
 /******/ ]);
 //# sourceMappingURL=App.bundle.js.map

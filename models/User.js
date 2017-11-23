@@ -27,6 +27,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: 'You must supply a handle!'
   },
+  tweets: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Tweet'
+    }
+  ],
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

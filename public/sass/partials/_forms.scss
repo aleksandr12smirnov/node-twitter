@@ -42,3 +42,28 @@ form {
     font-size: 1.3rem;
   }
 }
+
+.tweet-form {
+  padding: 2rem;
+  box-shadow: $shadow2;
+  &__body {
+    margin-bottom: 1.5rem;
+  }
+  &__input {
+    border-radius: 1rem;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__image-btn {
+    background: $container1;
+    color: $text-color;
+    border: 1px solid #141414;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    &:hover {
+      background: #141414;
+    }
+  }
+}
