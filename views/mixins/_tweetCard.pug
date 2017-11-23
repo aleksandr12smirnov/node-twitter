@@ -1,7 +1,7 @@
 mixin tweetCard(tweet, author = user)
   .tweet-card
       pre= h.dump(tweet)
-      img(src=`/uploads/${tweet.author.avatar || 'user.jpg'}`).tweet-card__author-image
+      img(src=`${author.avatar ? '/uploads/' + author.avatar : '/images/avatar/user.jpg'}`).tweet-card__author-image
       .tweet-card__content
         .tweet-card__header
           h3.tweet-card__name= author.name

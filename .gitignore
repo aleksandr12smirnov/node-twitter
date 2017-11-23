@@ -60,3 +60,6 @@ typings/
 # design file
 
 *.ai
+
+# uploads from user specific to database instance
+public/uploads/
