@@ -18,10 +18,12 @@ const tweetSchema = new mongoose.Schema({
   },
   likes: Number,
   retweets: Number,
-  replies: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'Tweet'
-  }
+  replies: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Tweet'
+    }
+  ]
 });
 
 module.exports = mongoose.model('Tweet', tweetSchema);
