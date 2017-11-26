@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   color: $text-color;
 }
 
@@ -45,9 +45,11 @@ body {
 }
 
 .split-container {
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'section-a section-b section-c';
+  grid-column-gap: 1.5rem;
   &__item {
     display: flex;
     flex-direction: column;

@@ -27,18 +27,30 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: 'You must supply a handle!'
   },
-  tweets: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'Tweet'
-  }],
-  followers: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  }],
-  following: [{
-    type: mongoose.Schema.ObjectId,
-    ref: 'User'
-  }],
+  tweets: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Tweet'
+    }
+  ],
+  followers: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User'
+    }
+  ],
+  following: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User'
+    }
+  ],
+  likes: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Tweet'
+    }
+  ],
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

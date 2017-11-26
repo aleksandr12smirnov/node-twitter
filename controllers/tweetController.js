@@ -44,7 +44,7 @@ exports.createTweet = async (req, res) => {
   // find author
   const author = await User.findById(tweet.author);
   // add tweet to authors tweets
-  author.tweets.push(tweet._id);
+  author.tweets.unshift(tweet._id);
   await author.save();
 
   // redirect user with saved message

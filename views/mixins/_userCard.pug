@@ -1,19 +1,21 @@
 mixin userCard(target = user)
-  pre= h.dump(target)
   .user-card
     .user-card__header
-      img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-card__image
+      a(href=`/${target.handle}`).user-card__link
+        img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-card__image
       .user-card__header--aside
-        p.user-card__name= target.name
-        p.user-card__handle @#{target.handle}
-    .usercard__stats
-      a(href=`/${target.handle}`).usercard__stats--item
-        p.usercard__stats--title Tweets
-        p.usercard__stats--value= target.tweets.length
-      a(href=`/${target.handle}/following`).usercard__stats--item
-        p.usercard__stats--title Following
-        p.usercard__stats--value= target.following.length
-      a(href=`/${target.handle}/followers`).usercard__stats--item
-        p.usercard__stats--title Followers
-        p.usercard__stats--value= target.followers.length
+        a(href=`/${target.handle}`).user-card__link
+          p.user-card__name= target.name
+        a(href=`/${target.handle}`).user-card__link
+          p.user-card__handle @#{target.handle}
+    .user-card__stats
+      a(href=`/${target.handle}`).user-card__link.user-card__stats--item
+        p.user-card__stats--title Tweets
+        p.user-card__stats--value= target.tweets.length
+      a(href=`/${target.handle}/following`).user-card__link.user-card__stats--item
+        p.user-card__stats--title Following
+        p.user-card__stats--value= target.following.length
+      a(href=`/${target.handle}/followers`).user-card__link.user-card__stats--item
+        p.user-card__stats--title Followers
+        p.user-card__stats--value= target.followers.length
 
