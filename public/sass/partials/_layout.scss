@@ -44,6 +44,26 @@ body {
   }
 }
 
+.split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'section-a section-b section-c';
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:nth-child(1) {
+      grid-area: section-a;
+    }
+    &:nth-child(2) {
+      grid-area: section-b;
+    }
+    &:nth-child(3) {
+      grid-area: section-c;
+    }
+  }
+}
+
 .error {
   h2 {
     font-size: 3rem;

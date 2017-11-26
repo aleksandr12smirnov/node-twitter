@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   list-style-type: none;
+  padding: 0;
   &__item {
+    margin: 0.5rem 0;
   }
 }

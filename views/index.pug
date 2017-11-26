@@ -2,10 +2,18 @@ extends layout
 
 include mixins/_tweetCard
 include mixins/_tweetForm
+include mixins/_userCard
 
 block content
-  +tweetForm()
-  ul.feed
-    each tweet in tweets
-      li.feed__item
-        +tweetCard(tweet)
+  .split-container
+    .split-container__item
+      +userCard()
+
+    .split-container__item
+      +tweetForm()
+      ul.feed
+        each tweet in tweets
+          li.feed__item
+            +tweetCard(tweet)
+            
+    .split-container__item

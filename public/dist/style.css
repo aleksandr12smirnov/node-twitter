@@ -58,6 +58,26 @@ body {
         grid-column-start: 2;
     justify-self: end; }
 
+.split-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'section-a section-b section-c'; }
+  .split-container__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center; }
+    .split-container__item:nth-child(1) {
+      grid-area: section-a; }
+    .split-container__item:nth-child(2) {
+      grid-area: section-b; }
+    .split-container__item:nth-child(3) {
+      grid-area: section-c; }
+
 .error h2 {
   font-size: 3rem; }
 
@@ -679,7 +699,8 @@ form {
 
 .tweet-form {
   padding: 2rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 100%; }
   .tweet-form__body {
     margin-bottom: 1.5rem; }
   .tweet-form__input {
@@ -798,7 +819,6 @@ a:visited {
   background: #212121;
   padding: 2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  margin: 1rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5rem 1fr;
@@ -858,6 +878,9 @@ a:visited {
       flex-direction: column;
   -ms-flex-align: center;
       align-items: center;
-  list-style-type: none; }
+  list-style-type: none;
+  padding: 0; }
+  .feed__item {
+    margin: 0.5rem 0; }
 
 /*# sourceMappingURL=style.css.map*/
