@@ -507,6 +507,18 @@ body {
   line-height: 2;
   white-space: pre-line; }
 
+.footer {
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .footer__links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .footer__link {
+    text-decoration: none;
+    color: #efefef;
+    font-size: 1.25rem; }
+
 .top {
   -ms-grid-column: 1;
       grid-column-start: 1;
@@ -613,7 +625,7 @@ body {
     .nav__search--icon {
       color: #323232; }
   .nav__avatar {
-    margin: 0 1rem;
+    padding: 0 1rem;
     color: #3495ce;
     height: 100%;
     display: -ms-flexbox;
@@ -628,13 +640,13 @@ body {
       display: flex;
       color: #ccc; }
     .nav__avatar--dropdown {
-      background: #1e1e1e;
+      background: #282828;
       display: none;
       -ms-flex-direction: column;
           flex-direction: column;
       z-index: 9999999;
       padding: 1rem;
-      top: 4rem;
+      top: 3.7rem;
       left: 50%;
       -ms-transform: translate(-50%);
           transform: translate(-50%);
@@ -652,7 +664,7 @@ body {
         height: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid #1e1e1e; }
+        border-bottom: 10px solid #282828; }
       .nav__avatar--dropdown button {
         padding: 0.75rem 2.5rem;
         margin: 0 0 1rem 0;
@@ -816,10 +828,13 @@ a:visited {
 .landing__form {
   margin: 0; }
 
+.card {
+  background: #212121;
+  padding: 1.5rem; }
+
 .user-card {
   width: 100%;
   min-width: 29rem;
-  background: #212121;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   position: relative;
   padding: 4rem 2rem 1.5rem 1rem; }
@@ -881,14 +896,13 @@ a:visited {
 
 .tweet-card {
   width: 60rem;
-  background: #212121;
-  padding: 2rem;
+  padding: 1rem 1.25rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5rem 1fr;
       grid-template-columns: 5rem 1fr;
-  grid-column-gap: 2rem; }
+  grid-column-gap: 1rem; }
   .tweet-card__author-image {
     -ms-grid-column: 1;
         grid-column-start: 1;
@@ -917,11 +931,11 @@ a:visited {
     -ms-flex-align: center;
         align-items: center;
     width: 100%;
-    margin-bottom: 1rem; }
+    margin-bottom: 0.5rem; }
   .tweet-card__text {
     margin: 0 0 1rem 0; }
   .tweet-card__body {
-    margin-bottom: 1rem; }
+    margin-bottom: 1.5rem; }
   .tweet-card__controls {
     display: -ms-flexbox;
     display: flex; }
@@ -932,7 +946,8 @@ a:visited {
       -ms-flex-align: center;
           align-items: center; }
       .tweet-card__controls span i {
-        font-size: 2rem; }
+        font-size: 1.75rem;
+        color: #8899a6; }
       .tweet-card__controls span p {
         margin: 0.5rem 0; }
 
@@ -944,7 +959,8 @@ a:visited {
   -ms-flex-align: center;
       align-items: center;
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
   .feed__item {
     margin: 0.5rem 0; }
 

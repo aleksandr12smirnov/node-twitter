@@ -1,7 +1,11 @@
+.card {
+  background: $container1;
+  padding: 1.5rem;
+}
+
 .user-card {
   width: 100%;
   min-width: 29rem;
-  background: $container1;
   box-shadow: $shadow2;
   position: relative;
   padding: 4rem 2rem 1.5rem 1rem;
@@ -76,12 +80,11 @@
 
 .tweet-card {
   width: 60rem;
-  background: $container1;
-  padding: 2rem;
+  padding: 1rem 1.25rem;
   box-shadow: $shadow1;
   display: grid;
   grid-template-columns: 5rem 1fr;
-  grid-column-gap: 2rem;
+  grid-column-gap: 1rem;
   &__author-image {
     grid-column-start: 1;
     border-radius: 100%;
@@ -112,13 +115,13 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   &__text {
     margin: 0 0 1rem 0;
   }
   &__body {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   &__controls {
     display: flex;
@@ -127,7 +130,8 @@
       display: flex;
       align-items: center;
       i {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        color: $text-color2;
       }
       p {
         margin: 0.5rem 0;

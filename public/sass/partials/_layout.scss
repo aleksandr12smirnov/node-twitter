@@ -80,3 +80,18 @@ body {
     white-space: pre-line;
   }
 }
+
+.footer {
+  width: 100%;
+  box-shadow: $shadow2;
+  &__links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__link {
+    text-decoration: none;
+    color: $text-color;
+    font-size: 1.25rem;
+  }
+}

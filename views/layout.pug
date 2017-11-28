@@ -39,12 +39,12 @@ html
                   div.nav__avatar--dropdown
                     if !user
                       a(href="/login")
-                        button.nav__btn Login
+                        button.nav__btn.tweet-btn Login
                       a(href="/register")
-                        button.nav__btn Sign Up
+                        button.nav__btn.tweet-btn Sign Up
                     else
                       a(href="/logout")
-                        button.nav__btn Logout
+                        button.nav__btn.tweet-btn Logout
             if user
               button.tweet-btn Tweet
 

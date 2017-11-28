@@ -27,6 +27,7 @@ router.post(
   authController.login
 );
 router.get('/logout', authController.logout);
+router.get('/:handle', userController.userPage);
 
 /* 
   Tweet Routes
