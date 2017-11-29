@@ -47,10 +47,11 @@ body {
 .split-container {
   margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr min-content 1fr;
   grid-template-areas: 'section-a section-b section-c';
   grid-column-gap: 1.5rem;
   &__item {
+    min-width: 30rem;
     display: flex;
     flex-direction: column;
     align-items: center;

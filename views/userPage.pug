@@ -6,12 +6,15 @@ block content
   .split-container
     .split-container__item
       .user-info
-        a(href=`/${profile.handle}`).user-info__name= profile.name
-        a(href=`/${profile.handle}`).user-info__handle @#{profile.handle}
-        p.user-info__bio= profile.bio
+        a(href=`/${profile.handle}`).user-info__link.user-info__name= profile.name
+        a(href=`/${profile.handle}`).user-info__link.user-info__handle
+          | @
+          span.user-info__handle--name= profile.handle
+        p.user-info__bio= profile.bio || "Test Bio"
         span.user-info__joined
           i.fa.fa-calendar
-          |  Joined #{profile.created}
+          - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          |  Joined #{monthNames[profile.joined.getMonth()]} #{profile.joined.getFullYear()}
     .split-container__item
       ul.feed
         each tweet in profile.tweets
