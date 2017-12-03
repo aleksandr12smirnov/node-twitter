@@ -4,9 +4,20 @@ mixin tweetCard(tweet, author = user)
       img(src=`${author.avatar ? '/uploads/' + author.avatar : '/images/avatar/user.jpg'}`).tweet-card__author-image
       .tweet-card__content
         .tweet-card__header
-          span.tweet-card__name= author.name
-          span.tweet-card__handle @#{author.handle}
-          span.tweet-card__time= h.moment(tweet.created).fromNow()
+          .tweet-card__header--info
+            span.tweet-card__name= author.name
+            span.tweet-card__handle @#{author.handle}
+            span.tweet-card__time= h.moment(tweet.created).fromNow()
+          .dropdown.tweet-card__dropdown
+            button.dropdown__toggle-btn
+              i.fa.fa-chevron-down
+            .dropdown__menu
+              ul.dropdown__list
+                li.dropdown__link
+                  button.dropdown__link-btn Copy link to Tweet
+                if(tweet.author.equals(user._id))
+                  li.dropdown__link
+                    button.dropdown__link-btn.dropdown__link-btn--danger Delete Tweet
         .tweet-card__body
           p.tweet-card__text= tweet.body
           if(tweet.image)

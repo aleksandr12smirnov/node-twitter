@@ -425,7 +425,7 @@ html {
   color: #efefef; }
 
 body {
-  background: #191919;
+  background: #171717;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2.5rem 1fr 2.5rem;
@@ -599,7 +599,9 @@ body {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: end;
-          justify-content: flex-end; }
+          justify-content: flex-end;
+      -ms-flex-align: center;
+          align-items: center; }
   .nav__brand {
     -ms-grid-column: 2;
         grid-column-start: 2;
@@ -636,44 +638,10 @@ body {
     -ms-flex-pack: center;
         justify-content: center;
     position: relative; }
-    .nav__avatar:hover .nav__avatar--dropdown {
-      display: -ms-flexbox;
-      display: flex;
-      color: #ccc; }
-    .nav__avatar--dropdown {
-      background: #282828;
-      display: none;
-      -ms-flex-direction: column;
-          flex-direction: column;
-      z-index: 9999999;
-      padding: 1rem;
-      top: 3.7rem;
-      left: 50%;
-      -ms-transform: translate(-50%);
-          transform: translate(-50%);
-      position: absolute;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0.6rem 0.6rem rgba(0, 0, 0, 0.23); }
-      .nav__avatar--dropdown:hover {
-        display: -ms-flexbox;
-        display: flex; }
-      .nav__avatar--dropdown:before {
-        position: relative;
-        top: -2rem;
-        left: 4rem;
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid #282828; }
-      .nav__avatar--dropdown button {
-        padding: 0.75rem 2.5rem;
-        margin: 0 0 1rem 0;
-        width: 100%;
-        cursor: pointer; }
     .nav__avatar--image {
       font-size: 3rem;
-      position: relative; }
+      position: relative;
+      color: #3495ce; }
 
 input,
 textarea {
@@ -904,6 +872,17 @@ a:visited {
   -ms-grid-columns: 5rem 1fr;
       grid-template-columns: 5rem 1fr;
   grid-column-gap: 1rem; }
+  .tweet-card__header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.5rem; }
+    .tweet-card__header #tweet-card__control-btn {
+      color: #efefef; }
   .tweet-card__author-image {
     -ms-grid-column: 1;
         grid-column-start: 1;
@@ -926,13 +905,6 @@ a:visited {
     -ms-grid-column: 2;
         grid-column-start: 2;
     font-size: 1.5rem; }
-  .tweet-card__header {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    width: 100%;
-    margin-bottom: 0.5rem; }
   .tweet-card__text {
     margin: 0 0 1rem 0; }
   .tweet-card__body {
@@ -994,5 +966,51 @@ a:visited {
   font-size: 1.4rem; }
   .user-info__joined i {
     font-size: 1.5rem; }
+
+.dropdown {
+  position: relative; }
+  .dropdown__toggle-btn {
+    background: transparent;
+    border: 0;
+    color: #efefef;
+    width: 5rem;
+    cursor: pointer; }
+  .dropdown__menu {
+    position: absolute;
+    top: 3.5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 18rem;
+    background: #2b2b2b;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0; }
+  .dropdown__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    color: #efefef;
+    font-size: 1.5rem; }
+    .dropdown__list:before {
+      position: absolute;
+      top: -1.5rem;
+      left: 1.5rem;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #2b2b2b; }
+  .dropdown__link-btn {
+    padding: 0.5rem 2rem;
+    width: 100%;
+    color: #efefef;
+    border: 0;
+    background: #2b2b2b; }
+    .dropdown__link-btn--danger {
+      color: #ff4f4f; }
 
 /*# sourceMappingURL=style.css.map*/

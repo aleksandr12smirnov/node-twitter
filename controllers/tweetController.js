@@ -51,3 +51,5 @@ exports.createTweet = async (req, res) => {
   req.flash('success', `Tweet Saved`);
   res.redirect(`/`);
 };
+
+exports.deleteTweet = async (req, res) => {};

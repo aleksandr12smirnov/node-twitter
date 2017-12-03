@@ -34,17 +34,19 @@ html
               input.nav__search--input(type="text")
               a.nav__search--icon(href="#")
                 i.material-icons search
-            .nav__avatar
+            .dropdown.nav__avatar--dropdown
+              button.dropdown__toggle-btn
                 i.material-icons.nav__avatar--image mood
-                  div.nav__avatar--dropdown
-                    if !user
-                      a(href="/login")
-                        button.nav__btn.tweet-btn Login
-                      a(href="/register")
-                        button.nav__btn.tweet-btn Sign Up
-                    else
-                      a(href="/logout")
-                        button.nav__btn.tweet-btn Logout
+              .dropdown__menu
+                ul.dropdown__list
+                  if !user
+                    a(href="/login").dropdown__link
+                      button.dropdown__link-btn.nav__btn Login
+                    a(href="/register")
+                      button.dropdown__link-btn.nav__btn Sign Up
+                  else
+                    a(href="/logout").dropdown__link
+                      button.dropdown__link-btn.nav__btn Logout
             if user
               button.tweet-btn Tweet
 

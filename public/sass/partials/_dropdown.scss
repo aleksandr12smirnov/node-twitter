@@ -1,0 +1,52 @@
+.dropdown {
+  position: relative;
+  &__toggle-btn {
+    background: transparent;
+    border: 0;
+    color: $text-color;
+    width: 5rem;
+    cursor: pointer;
+  }
+  &__menu {
+    position: absolute;
+    top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    background: $container1 + 10;
+    box-shadow: $shadow2;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    color: $text-color;
+    font-size: 1.5rem;
+    &:before {
+      position: absolute;
+      top: -1.5rem;
+      left: 1.5rem;
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $container1 + 10;
+    }
+  }
+  &__link {
+  }
+  &__link-btn {
+    padding: 0.5rem 2rem;
+    width: 100%;
+    color: $text-color;
+    border: 0;
+    background: $container1 + 10;
+    &--danger {
+      color: $text-color--danger;
+    }
+  }
+}

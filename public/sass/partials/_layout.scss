@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: #191919;
+  background: $container1 - 10;
   display: grid;
   grid-template-columns: 2.5rem 1fr 2.5rem;
   grid-template-rows: min-content min-content 1fr;

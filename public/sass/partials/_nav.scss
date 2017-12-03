@@ -67,6 +67,7 @@
       grid-column-start: 3;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
     }
   }
   &__brand {
@@ -102,46 +103,10 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    &:hover .nav__avatar--dropdown {
-      display: flex;
-      color: #ccc;
-    }
-    &--dropdown {
-      background: #1e1e1e + 10;
-      display: none;
-      flex-direction: column;
-      z-index: 9999999;
-      padding: 1rem;
-      top: 3.7rem;
-      left: 50%;
-      transform: translate(-50%);
-      position: absolute;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19),
-        0 0.6rem 0.6rem rgba(0, 0, 0, 0.23);
-      &:hover {
-        display: flex;
-      }
-      &:before {
-        position: relative;
-        top: -2rem;
-        left: 4rem;
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid #1e1e1e + 10;
-      }
-      button {
-        padding: 0.75rem 2.5rem;
-        margin: 0 0 1rem 0;
-        width: 100%;
-        cursor: pointer;
-      }
-    }
     &--image {
       font-size: 3rem;
       position: relative;
+      color: $accent;
     }
   }
 }
