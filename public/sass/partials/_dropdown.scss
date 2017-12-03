@@ -37,16 +37,19 @@
       border-bottom: 10px solid $container1 + 10;
     }
   }
-  &__link {
-  }
   &__link-btn {
     padding: 0.5rem 2rem;
     width: 100%;
+    text-align: left;
     color: $text-color;
     border: 0;
     background: $container1 + 10;
     &--danger {
       color: $text-color--danger;
     }
+  }
+  &__form {
+    padding: 0;
+    margin: 0;
   }
 }

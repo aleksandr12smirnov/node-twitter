@@ -14,10 +14,11 @@ mixin tweetCard(tweet, author = user)
             .dropdown__menu
               ul.dropdown__list
                 li.dropdown__link
-                  button.dropdown__link-btn Copy link to Tweet
+                  button(data-tweetId=tweet._id).dropdown__link-btn Copy link to Tweet
                 if(tweet.author.equals(user._id))
                   li.dropdown__link
-                    button.dropdown__link-btn.dropdown__link-btn--danger Delete Tweet
+                    form(action=`/tweet/${tweet._id}?_method=DELETE` method="POST").dropdown__form
+                      button.dropdown__link-btn.dropdown__link-btn--danger Delete Tweet
         .tweet-card__body
           p.tweet-card__text= tweet.body
           if(tweet.image)

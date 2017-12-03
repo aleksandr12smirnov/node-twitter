@@ -12,6 +12,7 @@ const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
+const methodOverride = require('method-override');
 require('./handlers/passport');
 
 // create our Express app
@@ -46,6 +47,9 @@ app.use(
 // // Passport JS used to handle logins
 app.use(passport.initialize());
 app.use(passport.session());
+
+// use method override to use request types other than GET and POST
+app.use(methodOverride('_method'));
 
 app.use(flash());
 

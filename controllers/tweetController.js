@@ -52,4 +52,24 @@ exports.createTweet = async (req, res) => {
   res.redirect(`/`);
 };
 
-exports.deleteTweet = async (req, res) => {};
+exports.deleteTweet = async (req, res) => {
+  const tweet = await Tweet.findById(req.params.id);
+
+  // make sure user owns tweet
+  if (tweet.author.equals(req.user._id)) {
+    // find user
+    const user = await User.findById(req.user._id);
+    // remove tweet from users tweet list
+    await user.tweets.pull(tweet._id);
+    // delete tweet
+    await tweet.remove();
+    // save user
+    await user.save();
+    // send user back with success message to notify tweet was deleted
+    req.flash('success', 'Tweet removed!');
+    res.redirect('back');
+  } else {
+    req.flash('error', 'You do not have permission to do that!');
+    res.redirect('back');
+  }
+};

@@ -26,7 +26,7 @@ router.post(
   catchErrors(userController.register),
   authController.login
 );
-router.get('/logout', authController.logout);
+router.get('/logout', authController.isLoggedIn, authController.logout);
 router.get('/:handle', userController.userPage);
 
 /* 
@@ -34,9 +34,16 @@ router.get('/:handle', userController.userPage);
 */
 router.post(
   '/tweet/new',
+  authController.isLoggedIn,
   tweetController.upload,
   catchErrors(tweetController.saveFile),
   catchErrors(tweetController.createTweet)
+);
+
+router.delete(
+  '/tweet/:id',
+  authController.isLoggedIn,
+  catchErrors(tweetController.deleteTweet)
 );
 
 module.exports = router;

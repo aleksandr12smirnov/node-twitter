@@ -1007,10 +1007,14 @@ a:visited {
   .dropdown__link-btn {
     padding: 0.5rem 2rem;
     width: 100%;
+    text-align: left;
     color: #efefef;
     border: 0;
     background: #2b2b2b; }
     .dropdown__link-btn--danger {
       color: #ff4f4f; }
+  .dropdown__form {
+    padding: 0;
+    margin: 0; }
 
 /*# sourceMappingURL=style.css.map*/
