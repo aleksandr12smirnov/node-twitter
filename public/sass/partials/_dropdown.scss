@@ -10,13 +10,16 @@
   &__menu {
     position: absolute;
     top: 3.5rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 18rem;
     background: $container1 + 10;
     box-shadow: $shadow2;
     border-radius: 0.5rem;
     padding: 0.5rem 0;
+    &--active {
+      display: flex;
+    }
   }
   &__list {
     list-style-type: none;

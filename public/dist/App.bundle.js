@@ -139,9 +139,48 @@ var _disableButton = __webpack_require__(1);
 
 var _disableButton2 = _interopRequireDefault(_disableButton);
 
+var _dropdowns = __webpack_require__(10);
+
+var _dropdowns2 = _interopRequireDefault(_dropdowns);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
+(0, _dropdowns2.default)('.dropdown');
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function attachDropdownToButton(button, dropdown) {
+  button.addEventListener('click', function (e) {
+    dropdown.classList.toggle('dropdown__menu--active');
+  });
+}
+
+function bindDropdowns(selector) {
+  var dropdowns = document.querySelectorAll(selector);
+
+  dropdowns.forEach(function (dropdown) {
+    var dropdownBtn = dropdown.querySelector('.dropdown__toggle-btn');
+    var dropdownMenu = dropdown.querySelector('.dropdown__menu');
+    attachDropdownToButton(dropdownBtn, dropdownMenu);
+  });
+}
+
+exports.default = bindDropdowns;
 
 /***/ })
 /******/ ]);
