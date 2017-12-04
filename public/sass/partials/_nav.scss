@@ -23,18 +23,8 @@
   align-items: center;
   max-width: 1200px;
   &__item {
-    transition: 0.3s ease;
     list-style-type: none;
     height: inherit;
-    box-shadow: inset 0 0rem 0 $accent;
-    &--active {
-      color: $accent;
-      box-shadow: inset 0 -0.4rem 0 $accent;
-    }
-    &:hover {
-      color: $accent;
-      box-shadow: inset 0 -0.4rem 0 $accent;
-    }
   }
   &__link {
     width: 100%;
@@ -103,10 +93,22 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    &--btn {
+      border-radius: 100%;
+      width: 4rem !important;
+      height: 4rem !important;
+    }
     &--image {
-      font-size: 3rem;
-      position: relative;
-      color: $accent;
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+  .dropdown {
+    &__menu {
+      top: 4.5rem;
+    }
+    &__list:before {
+      left: 1rem;
     }
   }
 }

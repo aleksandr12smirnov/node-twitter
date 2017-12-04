@@ -17,6 +17,11 @@ body {
   grid-column-start: 2;
   grid-row-start: 3;
   justify-self: center;
+  &--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .flash-banner {
   grid-column-start: 2;
@@ -24,11 +29,6 @@ body {
   justify-self: center;
   max-width: 1200px;
   width: 100%;
-}
-.inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .aside {

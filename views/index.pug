@@ -5,19 +5,20 @@ include mixins/_tweetForm
 include mixins/_userCard
 
 block content
-  .split-container
-    .split-container__item
-      +userCard()
+  .content
+    .split-container
+      .split-container__item
+        +userCard()
 
-    .split-container__item
-      +tweetForm()
-      ul.feed
-        each tweet in tweets
-          li.feed__item
-            +tweetCard(tweet)
-            
-    .split-container__item
-      .card.footer
-        ul.footer__links-list
-          li.footer__item
-            a(href="#").footer__link Made by Seth Church
+      .split-container__item
+        +tweetForm()
+        ul.feed
+          each tweet in tweets
+            li.feed__item
+              +tweetCard(tweet)
+              
+      .split-container__item
+        .card.footer
+          ul.footer__links-list
+            li.footer__item
+              a(href="#").footer__link Made by Seth Church

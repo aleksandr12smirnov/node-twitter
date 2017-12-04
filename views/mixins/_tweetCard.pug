@@ -14,7 +14,7 @@ mixin tweetCard(tweet, author = user)
             .dropdown__menu
               ul.dropdown__list
                 li.dropdown__link
-                  button(data-tweetId=tweet._id).dropdown__link-btn Copy link to Tweet
+                  button(data-clipboard-action="copy"  data-clipboard-text=`/${author.handle}/status/${tweet._id}`).dropdown__link-btn Copy link to Tweet
                 if(tweet.author.equals(user._id))
                   li.dropdown__link
                     form(action=`/tweet/${tweet._id}?_method=DELETE` method="POST").dropdown__form

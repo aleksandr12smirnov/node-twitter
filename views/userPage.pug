@@ -3,21 +3,43 @@ extends layout
 include mixins/_tweetCard
 
 block content
-  .split-container
-    .split-container__item
-      .user-info
-        a(href=`/${profile.handle}`).user-info__link.user-info__name= profile.name
-        a(href=`/${profile.handle}`).user-info__link.user-info__handle
-          | @
-          span.user-info__handle--name= profile.handle
-        p.user-info__bio= profile.bio || "Test Bio"
-        span.user-info__joined
-          i.fa.fa-calendar
-          - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-          |  Joined #{monthNames[profile.joined.getMonth()]} #{profile.joined.getFullYear()}
-    .split-container__item
-      ul.feed
-        each tweet in profile.tweets
-          li.feed__item
-            +tweetCard(tweet)
-    .split-container__item
+  .user-banner
+    img(src=`${user.bannerImage || ''}`).user-banner__image
+    .split-container.user-banner__nav
+      .split-container__item
+        img(src=`${user.avatar ? '/uploads/' + user.avatar : '/images/avatar/user.jpg'}`)
+      .split-container__item
+        ul.user-banner__nav-list
+          li.user-banner__nav-item
+            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/following`)
+              span.user-banner__nav-title Following
+              span.user-banner__nav-value= user.following.length
+          li.user-banner__nav-item
+            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/followers`)
+              span.user-banner__nav-title Followers
+              span.user-banner__nav-value= user.followers.length
+          li.user-banner__nav-item
+            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/likes`)
+              span.user-banner__nav-title Likes
+              span.user-banner__nav-value= user.likes
+      .split-container__item
+        button.user-banner__edit-btn Edit profile
+  .content
+    .split-container
+      .split-container__item
+        .user-info
+          a(href=`/${profile.handle}`).user-info__link.user-info__name= profile.name
+          a(href=`/${profile.handle}`).user-info__link.user-info__handle
+            | @
+            span.user-info__handle--name= profile.handle
+          p.user-info__bio= profile.bio || "Test Bio"
+          span.user-info__joined
+            i.fa.fa-calendar
+            - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            |  Joined #{monthNames[profile.joined.getMonth()]} #{profile.joined.getFullYear()}
+      .split-container__item
+        ul.feed
+          each tweet in profile.tweets
+            li.feed__item
+              +tweetCard(tweet)
+      .split-container__item

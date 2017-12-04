@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -97,7 +97,8 @@ exports.$ = $;
 exports.$$ = $$;
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -107,55 +108,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 function disableButton(input, button) {
-  input.on('keyup', function () {
-    if (input.value.length > 0) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  });
+  if (input) {
+    input.on('keyup', function () {
+      if (input.value.length > 0) {
+        button.disabled = false;
+      } else {
+        button.disabled = true;
+      }
+    });
+  }
 }
 
 exports.default = disableButton;
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(2);
-
-var _bling = __webpack_require__(0);
-
-var _disableButton = __webpack_require__(1);
-
-var _disableButton2 = _interopRequireDefault(_disableButton);
-
-var _dropdowns = __webpack_require__(10);
-
-var _dropdowns2 = _interopRequireDefault(_dropdowns);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
-(0, _dropdowns2.default)('.dropdown');
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -177,10 +144,7 @@ function attachDropdownToButton(button, dropdown) {
   });
 }
 
-function bindDropdowns(selector) {
-  // get all dropdowns from given selector
-  var dropdowns = document.querySelectorAll(selector);
-
+function bindDropdowns(dropdowns) {
   // bind the button to the menu with attach function
   dropdowns.forEach(function (dropdown) {
     var dropdownBtn = dropdown.querySelector('.dropdown__toggle-btn');
@@ -190,6 +154,36 @@ function bindDropdowns(selector) {
 }
 
 exports.default = bindDropdowns;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(4);
+
+var _bling = __webpack_require__(0);
+
+var _disableButton = __webpack_require__(2);
+
+var _disableButton2 = _interopRequireDefault(_disableButton);
+
+var _dropdowns = __webpack_require__(3);
+
+var _dropdowns2 = _interopRequireDefault(_dropdowns);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
+(0, _dropdowns2.default)((0, _bling.$$)('.dropdown'));
 
 /***/ })
 /******/ ]);

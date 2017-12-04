@@ -1,17 +1,17 @@
 extends layout
 
 block content
-  .inner
-    form.form(action='/register', method='POST')
-      h2.form__header Register
-      label(for='name') Name
-      input(type='text', name='name', required='required')
-      label(for='username') Username
-      input(type='text', name='username', required='required')
-      label(for='email') Email
-      input(type='email', name='email', required='required')
-      label(for='password') Password
-      input(type='password', name='password')
-      label(for='password-confirm') Confirm Password
-      input(type='password', name='password-confirm')
-      input.button(type='submit', value='Register')
+  .content.content--center
+      form.form(action='/register', method='POST')
+        h2.form__header Register
+        label(for='name') Name
+        input(type='text', name='name', required='required')
+        label(for='username') Username
+        input(type='text', name='username', required='required')
+        label(for='email') Email
+        input(type='email', name='email', required='required')
+        label(for='password') Password
+        input(type='password', name='password')
+        label(for='password-confirm') Confirm Password
+        input(type='password', name='password-confirm')
+        input.button(type='submit', value='Register')

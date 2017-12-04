@@ -13,16 +13,16 @@ html
       header.top
         nav.nav
           .nav__controls.nav__controls--left
-            li.nav__item(class=(currentPath == "/" ? "nav__item--active" : ""))
+            li.nav__item.hover-highlight(class=(currentPath == "/" ? "hover-highlight--active" : ""))
               a.nav__link(href="/")
                 i.material-icons.nav__link--icon home
                 span.nav__link--text Home
             if user
-              li.nav__item(class=(currentPath.startsWith("/notifications") ? "nav__item--active" : ""))
+              li.nav__item.hover-highlight(class=(currentPath.startsWith("/notifications") ? "hover-highlight--active" : ""))
                 a.nav__link(href="/notifications")
                   i.material-icons.nav__link--icon notifications
                   span.nav__link--text Notifications
-              li.nav__item(class=(currentPath.startsWith("/messages") ? "nav__item--active" : ""))
+              li.nav__item.hover-highlight(class=(currentPath.startsWith("/messages") ? "hover-highlight--active" : ""))
                 a.nav__link(href="/messages")
                   i.material-icons.nav__link--icon email
                   span.nav__link--text Messages
@@ -35,8 +35,8 @@ html
               a.nav__search--icon(href="#")
                 i.material-icons search
             .dropdown.nav__avatar--dropdown
-              button.dropdown__toggle-btn
-                i.material-icons.nav__avatar--image mood
+              button.dropdown__toggle-btn.nav__avatar--btn
+                img(src=`${user && user.avatar ? '/uploads/' + user.avatar : '/images/avatar/user.jpg'}`).nav__avatar--image
               .dropdown__menu
                 ul.dropdown__list
                   if !user
@@ -61,8 +61,7 @@ html
                 .flash(class=`flash--${category}`)
                   p.flash__text!= message
                   button.flash__remove(onClick="this.parentElement.remove()") &times;
-    .content
-      block content
+    block content
 
     block scripts
 

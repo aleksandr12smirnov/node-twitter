@@ -11,10 +11,7 @@ function attachDropdownToButton(button, dropdown) {
   });
 }
 
-function bindDropdowns(selector) {
-  // get all dropdowns from given selector
-  const dropdowns = document.querySelectorAll(selector);
-
+function bindDropdowns(dropdowns) {
   // bind the button to the menu with attach function
   dropdowns.forEach(dropdown => {
     const dropdownBtn = dropdown.querySelector('.dropdown__toggle-btn');
