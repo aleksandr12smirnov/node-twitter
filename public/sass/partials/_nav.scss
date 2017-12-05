@@ -2,19 +2,19 @@
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
-  display: grid;
-  grid-template-columns: 2.5rem auto 2.5rem;
+  position: fixed;
+  width: 100%;
+  padding: 0 2.5rem;
   height: 5rem;
   z-index: 999;
   background: #212121;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19),
-    0 0.6rem 0.6rem rgba(0, 0, 0, 0.23);
+  box-shadow: $shadow1;
 }
 
 .nav {
   grid-column-start: 2;
   display: grid;
-  justify-self: center;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
   color: $text-color;
   width: 100%;

@@ -4,26 +4,31 @@ include mixins/_tweetCard
 
 block content
   .user-banner
-    img(src=`${user.bannerImage || ''}`).user-banner__image
-    .split-container.user-banner__nav
-      .split-container__item
-        img(src=`${user.avatar ? '/uploads/' + user.avatar : '/images/avatar/user.jpg'}`)
-      .split-container__item
-        ul.user-banner__nav-list
-          li.user-banner__nav-item
-            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/following`)
-              span.user-banner__nav-title Following
-              span.user-banner__nav-value= user.following.length
-          li.user-banner__nav-item
-            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/followers`)
-              span.user-banner__nav-title Followers
-              span.user-banner__nav-value= user.followers.length
-          li.user-banner__nav-item
-            a.user-banner__nav-link.hover-highlight(href=`${user.handle}/likes`)
-              span.user-banner__nav-title Likes
-              span.user-banner__nav-value= user.likes
-      .split-container__item
-        button.user-banner__edit-btn Edit profile
+    if(user.bannerImage)
+      img(src=`${user.bannerImage}`).user-banner__image
+    else 
+      .user-banner__image
+    .user-banner__nav
+      .content
+        .split-container
+          .split-container__item
+            img(width="200" src=`${user.avatar ? '/uploads/' + user.avatar : '/images/avatar/user.jpg'}`).user-banner__user-image
+          .split-container__item
+            ul.user-banner__nav-list
+              li.user-banner__nav-item
+                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/following`)
+                  span.user-banner__nav-title Following
+                  span.user-banner__nav-value= user.following.length
+              li.user-banner__nav-item
+                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/followers`)
+                  span.user-banner__nav-title Followers
+                  span.user-banner__nav-value= user.followers.length
+              li.user-banner__nav-item
+                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/likes`)
+                  span.user-banner__nav-title Likes
+                  span.user-banner__nav-value= user.likes
+          .split-container__item
+            button.user-banner__edit-btn Edit profile
   .content
     .split-container
       .split-container__item
