@@ -1,0 +1,25 @@
+extends userLayout
+
+include ../mixins/_tweetCard
+
+block content
+  if(profile.tweets.length)
+    .flex-container__item
+      ul.user-tweet-nav
+        li.user-tweet-nav__item
+          a.user-tweet-nav__link(href="") Tweets
+        li.user-tweet-nav__item
+          a.user-tweet-nav__link(href="") Tweets & replies
+        li.user-tweet-nav__item
+          a.user-tweet-nav__link(href="") Media
+      ul.feed
+        each tweet in profile.tweets
+          li.feed__item
+            +tweetCard(tweet, profile)
+  else
+    .user-tweet-nav__no-tweets.content--center
+      p
+        |@#{profile.handle} 
+        span hasn't Tweeted
+          
+  .flex-container__item

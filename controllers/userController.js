@@ -56,12 +56,12 @@ exports.register = async (req, res, next) => {
   next();
 };
 
-exports.userPage = async (req, res, next) => {
+exports.showUserTweets = async (req, res, next) => {
   const username = req.params.handle.toLowerCase();
   const profile = await User.findOne({ username }).populate('tweets');
   if (!profile) {
     return next();
   }
   const title = `${profile.name} (@${profile.handle})`;
-  res.render('userPage', { profile, title });
+  res.render('user/tweets', { profile, title });
 };

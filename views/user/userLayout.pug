@@ -1,37 +1,37 @@
-extends layout
+extends ../layout
 
-include mixins/_tweetCard
+//- /handle/ = profile = found user || user = logged in user
 
 block content
   .user-banner
-    if(user.bannerImage)
-      img(src=`${user.bannerImage}`).user-banner__image
+    if(profile.bannerImage)
+      img(src=`${profile.bannerImage}`).user-banner__image
     else 
       .user-banner__image
     .user-banner__nav
       .content
-        .split-container
-          .split-container__item
-            img(width="200" src=`${user.avatar ? '/uploads/' + user.avatar : '/images/avatar/user.jpg'}`).user-banner__user-image
-          .split-container__item
+        .flex-container
+          .flex-container__item
+            img(width="200" src=`${profile.avatar ? '/uploads/' + profile.avatar : '/images/avatar/user.jpg'}`).user-banner__user-image
+          .flex-container__item
             ul.user-banner__nav-list
               li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/following`)
+                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/following`)
                   span.user-banner__nav-title Following
-                  span.user-banner__nav-value= user.following.length
+                  span.user-banner__nav-value= profile.following.length
               li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/followers`)
+                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/followers`)
                   span.user-banner__nav-title Followers
-                  span.user-banner__nav-value= user.followers.length
+                  span.user-banner__nav-value= profile.followers.length
               li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${user.handle}/likes`)
+                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/likes`)
                   span.user-banner__nav-title Likes
-                  span.user-banner__nav-value= user.likes
-          .split-container__item
+                  span.user-banner__nav-value= profile.likes
+          .flex-container__item
             button.user-banner__edit-btn Edit profile
   .content
-    .split-container
-      .split-container__item
+    .flex-container
+      .flex-container__item
         .user-info
           a(href=`/${profile.handle}`).user-info__link.user-info__name= profile.name
           a(href=`/${profile.handle}`).user-info__link.user-info__handle
@@ -42,9 +42,4 @@ block content
             i.fa.fa-calendar
             - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             |  Joined #{monthNames[profile.joined.getMonth()]} #{profile.joined.getFullYear()}
-      .split-container__item
-        ul.feed
-          each tweet in profile.tweets
-            li.feed__item
-              +tweetCard(tweet)
-      .split-container__item
+      block content

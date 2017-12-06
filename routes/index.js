@@ -27,11 +27,17 @@ router.post(
   authController.login
 );
 router.get('/logout', authController.isLoggedIn, authController.logout);
-router.get('/:handle', userController.userPage);
+
+/* 
+  User Routes
+*/
+
+router.get('/:handle', userController.showUserTweets);
 
 /* 
   Tweet Routes
 */
+
 router.post(
   '/tweet/new',
   authController.isLoggedIn,

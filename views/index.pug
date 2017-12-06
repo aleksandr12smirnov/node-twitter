@@ -6,18 +6,18 @@ include mixins/_userCard
 
 block content
   .content
-    .split-container
-      .split-container__item
+    .tri-grid-container
+      .tri-grid-container__item
         +userCard()
 
-      .split-container__item
+      .tri-grid-container__item
         +tweetForm()
         ul.feed
           each tweet in tweets
             li.feed__item
               +tweetCard(tweet)
               
-      .split-container__item
+      .tri-grid-container__item
         .card.footer
           ul.footer__links-list
             li.footer__item
