@@ -54,6 +54,53 @@
     height: 6rem;
     display: flex;
     justify-content: center;
+    &-list {
+      list-style-type: none;
+      display: flex;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      max-width: 600rem;
+    }
+    &-item {
+      height: 100%;
+      padding: 1rem 1.6rem;
+    }
+    &-link {
+      display: flex;
+      flex-direction: column;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+    }
+    &-title {
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 600;
+    }
+    &-value {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+  &__btn {
+    margin: auto 0;
+    background: transparent;
+    border: 1.5px solid $text-color2;
+    font-size: 1.3rem;
+    font-family: inherit;
+    &--hidden {
+      display: none;
+    }
+    &--save-edit {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+  &__nav-btns {
+    flex-direction: row;
+    justify-content: flex-end;
   }
   &__user-image {
     border-radius: 100%;

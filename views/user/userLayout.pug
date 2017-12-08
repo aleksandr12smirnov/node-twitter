@@ -15,20 +15,22 @@ block content
             img(width="200" src=`${profile.avatar ? '/uploads/' + profile.avatar : '/images/avatar/user.jpg'}`).user-banner__user-image
           .flex-container__item
             ul.user-banner__nav-list
-              li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/following`)
+              li.user-banner__nav-item.hover-highlight
+                a.user-banner__nav-link(href=`${profile.handle}/following`)
                   span.user-banner__nav-title Following
                   span.user-banner__nav-value= profile.following.length
-              li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/followers`)
+              li.user-banner__nav-item.hover-highlight
+                a.user-banner__nav-link(href=`${profile.handle}/followers`)
                   span.user-banner__nav-title Followers
                   span.user-banner__nav-value= profile.followers.length
-              li.user-banner__nav-item
-                a.user-banner__nav-link.hover-highlight(href=`${profile.handle}/likes`)
+              li.user-banner__nav-item.hover-highlight
+                a.user-banner__nav-link(href=`${profile.handle}/likes`)
                   span.user-banner__nav-title Likes
-                  span.user-banner__nav-value= profile.likes
-          .flex-container__item
-            button.user-banner__edit-btn Edit profile
+                  span.user-banner__nav-value= profile.likes.length
+          .flex-container__item.user-banner__nav-btns
+            button.user-banner__btn.user-banner__btn--edit.tweet-btn Edit profile
+            button.user-banner__btn.user-banner__btn--cancel-edit.user-banner__btn--hidden.tweet-btn Cancel
+            button.user-banner__btn.user-banner__btn--save-edit.user-banner__btn--hidden.tweet-btn Save Changes
   .content
     .flex-container
       .flex-container__item

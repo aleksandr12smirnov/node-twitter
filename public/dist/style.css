@@ -495,6 +495,10 @@ body {
   display: -ms-flexbox;
   display: flex; }
   .flex-container__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
     min-width: 30rem; }
 
 .error h2 {
@@ -1010,6 +1014,49 @@ a:visited {
     display: flex;
     -ms-flex-pack: center;
         justify-content: center; }
+    .user-banner__nav-list {
+      list-style-type: none;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      max-width: 600rem; }
+    .user-banner__nav-item {
+      height: 100%;
+      padding: 1rem 1.6rem; }
+    .user-banner__nav-link {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      color: inherit;
+      text-decoration: none;
+      text-align: center; }
+    .user-banner__nav-title {
+      font-size: 1.2rem;
+      margin: 0;
+      font-weight: 600; }
+    .user-banner__nav-value {
+      font-size: 2rem;
+      font-weight: 700; }
+  .user-banner__btn {
+    margin: auto 0;
+    background: transparent;
+    border: 1.5px solid #8899a6;
+    font-size: 1.3rem;
+    font-family: inherit; }
+    .user-banner__btn--hidden {
+      display: none; }
+    .user-banner__btn--save-edit {
+      border-color: #3495ce;
+      color: #3495ce; }
+  .user-banner__nav-btns {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: end;
+        justify-content: flex-end; }
   .user-banner__user-image {
     border-radius: 100%;
     border: 5px solid #212121;
