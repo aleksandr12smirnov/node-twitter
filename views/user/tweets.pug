@@ -7,11 +7,11 @@ block content
     .flex-container__item
       ul.user-tweet-nav
         li.user-tweet-nav__item
-          a.user-tweet-nav__link(href="") Tweets
+          a.user-tweet-nav__link(href=`/${profile.handle}` class=(currentPath == `/${profile.handle}` ? "user-tweet-nav__link--active" : "")) Tweets
         li.user-tweet-nav__item
-          a.user-tweet-nav__link(href="") Tweets & replies
+          a.user-tweet-nav__link(href=`/${profile.handle}/with_replies` class=(currentPath == `/${profile.handle}/with_replies` ? "user-tweet-nav__link--active" : "")) Tweets & replies
         li.user-tweet-nav__item
-          a.user-tweet-nav__link(href="") Media
+          a.user-tweet-nav__link(href=`/${profile.handle}/media` class=(currentPath == `/${profile.handle}/media` ? "user-tweet-nav__link--active" : "")) Media
       ul.feed
         each tweet in profile.tweets
           li.feed__item

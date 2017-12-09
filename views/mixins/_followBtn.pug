@@ -1,0 +1,6 @@
+mixin followBtn() 
+  form.follow-form(action=`/api/user/${profile._id}/follow` method="POST" data-target=`#followers-count-${profile._id}`)
+    - const followString = user.following.map(obj => obj.toString());
+    - const followBtnClass = followString.includes(profile._id.toString()) ? '.follow-btn--followed' : '';
+
+    button.follow-btn(type="submit" name="follow" class=followBtnClass) Follow

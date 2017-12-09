@@ -53,3 +53,13 @@ router.delete(
 );
 
 module.exports = router;
+
+/*
+  Api Routes
+*/
+
+router.post(
+  '/api/user/:id/follow',
+  authController.isLoggedIn,
+  userController.followUser
+);

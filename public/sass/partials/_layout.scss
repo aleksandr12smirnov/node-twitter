@@ -65,6 +65,7 @@ body {
 
 .flex-container {
   display: flex;
+  height: 100%;
   &__item {
     display: flex;
     flex-direction: column;

@@ -11,16 +11,23 @@ exports.registerForm = (req, res) => {
 };
 
 exports.validateRegister = (req, res, next) => {
+  // santatize inputs to prevent malicious code from running
   req.sanitizeBody('name');
   req.sanitizeBody('username');
+
+  // make sure input is valid and not empty
   req.checkBody('username', 'You must supply a username!').notEmpty();
   req.checkBody('name', 'You must supply a name!').notEmpty();
   req.checkBody('email', 'That Email is not valid!').isEmail();
+
+  // change all email formats to one so we can ensure to check against the same type
   req.sanitizeBody('email').normalizeEmail({
     remove_dots: false,
     remove_extension: false,
     gmail_remove_subaddress: false
   });
+
+  // check passwords and compare the confirmation
   req.checkBody('password', 'You must enter a password!').notEmpty();
   req
     .checkBody('password-confirm', 'You must confirm your password!')
@@ -41,6 +48,7 @@ exports.validateRegister = (req, res, next) => {
     return;
   }
 
+  // if all is well goto next middleware (register)
   next();
 };
 
@@ -58,10 +66,37 @@ exports.register = async (req, res, next) => {
 
 exports.showUserTweets = async (req, res, next) => {
   const username = req.params.handle.toLowerCase();
+
+  // find profile and make tweets available
   const profile = await User.findOne({ username }).populate('tweets');
+
+  // if user cant be found go to next middleware
   if (!profile) {
     return next();
   }
   const title = `${profile.name} (@${profile.handle})`;
   res.render('user/tweets', { profile, title });
+};
+
+exports.followUser = async (req, res) => {
+  // turn Id Objects into strings for searching
+  const following = req.user.following.map(obj => obj.toString());
+
+  // if target is in users following list then remove from both otherwise add to both
+  const operator = following.includes(req.params.id) ? '$pull' : '$addToSet';
+
+  // find user and add target to following list
+  await User.findByIdAndUpdate(
+    req.user._id,
+    { [operator]: { following: req.params.id } },
+    { new: true }
+  );
+
+  // find target and add user to thier followers list
+  const target = await User.findByIdAndUpdate(
+    req.params.id,
+    { [operator]: { followers: req.user._id } },
+    { new: true }
+  );
+  res.json(target);
 };

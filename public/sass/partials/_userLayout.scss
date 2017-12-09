@@ -99,7 +99,10 @@
     }
   }
   &__nav-btns {
+    display: flex;
+    height: 100%;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
   }
   &__user-image {
@@ -137,6 +140,12 @@
     }
     &--active {
       color: $text-color;
+      &:visited {
+        color: inherit;
+      }
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   &__no-tweets {
