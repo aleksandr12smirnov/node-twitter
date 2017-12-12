@@ -4,6 +4,7 @@ extends ../layout
 include ../mixins/_followBtn
 
 block content
+  - const isOwner = user._id.equals(profile._id);
   .user-banner
     if(profile.bannerImage)
       img(src=`${profile.bannerImage}`).user-banner__image
@@ -35,7 +36,7 @@ block content
                   span.user-banner__nav-value= profile.likes.length
           .flex-container__item
             .user-banner__nav-btns
-              if(user._id.equals(profile._id))
+              if(isOwner)
                 button.user-banner__btn.user-banner__btn--edit.tweet-btn Edit profile
                 button.user-banner__btn.user-banner__btn--cancel-edit.user-banner__btn--hidden.tweet-btn Cancel
                 button.user-banner__btn.user-banner__btn--save-edit.user-banner__btn--hidden.tweet-btn Save Changes

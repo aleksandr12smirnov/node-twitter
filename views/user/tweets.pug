@@ -1,6 +1,7 @@
 extends userLayout
 
 include ../mixins/_tweetCard
+include ../mixins/_tweetForm
 
 block content
   if(profile.tweets.length)
@@ -12,6 +13,10 @@ block content
           a.user-tweet-nav__link(href=`/${profile.handle}/with_replies` class=(currentPath == `/${profile.handle}/with_replies` ? "user-tweet-nav__link--active" : "")) Tweets & replies
         li.user-tweet-nav__item
           a.user-tweet-nav__link(href=`/${profile.handle}/media` class=(currentPath == `/${profile.handle}/media` ? "user-tweet-nav__link--active" : "")) Media
+          
+      if(isOwner)
+        +tweetForm()
+
       ul.feed
         each tweet in profile.tweets
           li.feed__item

@@ -14,5 +14,12 @@ exports.dump = obj => JSON.stringify(obj, null, 2);
 // get icons
 exports.icon = name => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
+// format large numbers into shortend strings
+exports.formatNumber = num => {
+  if (num > 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  }
+  return num;
+};
 // Some details about the site
 exports.siteName = `Node Twitter`;
