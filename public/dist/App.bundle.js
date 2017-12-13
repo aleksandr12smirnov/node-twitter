@@ -1029,7 +1029,7 @@ function ajaxFollow(e) {
   // post to api
   _axios2.default.post(this.action).then(function (res) {
     // toggle active class and set users followers to match the data sent back
-    _this.follow.classList.toggle('.follow-btn--followed');
+    _this.follow.classList.toggle('follow-btn--active');
     (0, _bling.$)(_this.dataset.target).textContent = res.data.followers.length;
   }).catch(console.error);
 }

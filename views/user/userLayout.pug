@@ -19,19 +19,19 @@ block content
             ul.user-banner__nav-list
               if(profile.tweets.length > 0)
                  li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}` ? "hover-highlight--active" : ""))
-                  a.user-banner__nav-link(href=`${profile.handle}`)
+                  a.user-banner__nav-link(href=`/${profile.handle}`)
                     span.user-banner__nav-title Tweets
                     span.user-banner__nav-value= profile.tweets.length
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/following` ? "hover-highlight--active" : ""))
-                a.user-banner__nav-link(href=`${profile.handle}/following`)
+                a.user-banner__nav-link(href=`/${profile.handle}/following`)
                   span.user-banner__nav-title Following
                   span.user-banner__nav-value= profile.following.length
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/followers` ? "hover-highlight--active" : ""))
-                a.user-banner__nav-link(href=`${profile.handle}/followers`)
+                a.user-banner__nav-link(href=`/${profile.handle}/followers`)
                   span.user-banner__nav-title Followers
                   span.user-banner__nav-value(id=`followers-count-${profile._id}`)= profile.followers.length
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/likes` ? "hover-highlight--active" : ""))
-                a.user-banner__nav-link(href=`${profile.handle}/likes`)
+                a.user-banner__nav-link(href=`/${profile.handle}/likes`)
                   span.user-banner__nav-title Likes
                   span.user-banner__nav-value= profile.likes.length
           .flex-container__item
@@ -41,7 +41,7 @@ block content
                 button.user-banner__btn.user-banner__btn--cancel-edit.user-banner__btn--hidden.tweet-btn Cancel
                 button.user-banner__btn.user-banner__btn--save-edit.user-banner__btn--hidden.tweet-btn Save Changes
               else
-                +followBtn()
+                +followBtn(profile, `#followers-count-${profile._id}`)
   .content
     .flex-container
       .flex-container__item

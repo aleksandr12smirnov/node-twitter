@@ -1,0 +1,21 @@
+mixin userInfoCard(target = user)
+  .card.user-info-card
+    .user-info-card__header
+      a(href=`/${target.handle}`).user-info-card__link
+        img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-info-card__image
+      .user-info-card__header--aside
+        a(href=`/${target.handle}`).user-info-card__link
+          p.user-info-card__name= target.name
+        a(href=`/${target.handle}`).user-info-card__link
+          p.user-info-card__handle @#{target.handle}
+    .user-info-card__stats
+      a(href=`/${target.handle}`).user-info-card__link.user-info-card__stats--item
+        p.user-info-card__stats--title Tweets
+        p.user-info-card__stats--value= target.tweets.length
+      a(href=`/${target.handle}/following`).user-info-card__link.user-info-card__stats--item
+        p.user-info-card__stats--title Following
+        p.user-info-card__stats--value= target.following.length
+      a(href=`/${target.handle}/followers`).user-info-card__link.user-info-card__stats--item
+        p.user-info-card__stats--title Followers
+        p.user-info-card__stats--value= target.followers.length
+

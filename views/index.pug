@@ -2,13 +2,13 @@ extends layout
 
 include mixins/_tweetCard
 include mixins/_tweetForm
-include mixins/_userCard
+include mixins/_userInfoCard
 
 block content
   .content
     .tri-grid-container
       .tri-grid-container__item
-        +userCard()
+        +userInfoCard()
 
       .tri-grid-container__item
         +tweetForm()

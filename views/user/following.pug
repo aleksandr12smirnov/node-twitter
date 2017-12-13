@@ -1,0 +1,9 @@
+extends userLayout
+
+include ../mixins/_userCard
+
+block content
+  .flex-container__item
+    pre= h.dump(profile)
+    each person in profile.following
+      +userCard(person)

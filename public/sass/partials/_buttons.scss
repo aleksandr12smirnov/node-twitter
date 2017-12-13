@@ -24,4 +24,27 @@
 
 .follow-btn {
   @extend .tweet-btn;
+  color: transparent;
+  &:before {
+    color: $text-color;
+    content: 'Follow';
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    top: 0;
+    left: 0;
+  }
+  &--active {
+    &:before {
+      content: 'Following';
+    }
+    &:hover {
+      background: #ac002b;
+      &:before {
+        content: 'Unfollow';
+      }
+    }
+  }
 }

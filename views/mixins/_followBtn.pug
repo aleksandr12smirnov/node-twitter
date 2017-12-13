@@ -1,6 +1,6 @@
-mixin followBtn() 
-  form.follow-form(action=`/api/user/${profile._id}/follow` method="POST" data-target=`#followers-count-${profile._id}`)
+mixin followBtn(profile, followSelector = '') 
+  form.follow-form(action=`/api/user/${profile._id}/follow` method="POST" data-target=followSelector)
     - const followString = user.following.map(obj => obj.toString());
-    - const followBtnClass = followString.includes(profile._id.toString()) ? '.follow-btn--followed' : '';
+    - const followBtnClass = followString.includes(profile._id.toString()) ? 'follow-btn--active' : '';
 
-    button.follow-btn(type="submit" name="follow" class=followBtnClass) Follow
+    button.follow-btn(type="submit" name="follow" class=followBtnClass)

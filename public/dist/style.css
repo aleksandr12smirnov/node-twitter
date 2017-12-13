@@ -817,13 +817,13 @@ a:visited {
   background: #212121;
   padding: 1.5rem; }
 
-.user-card {
+.user-info-card {
   width: 100%;
   min-width: 29rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   position: relative;
   padding: 4rem 2rem 1.5rem 1rem; }
-  .user-card:before {
+  .user-info-card:before {
     content: ' ';
     display: block;
     position: absolute;
@@ -832,29 +832,29 @@ a:visited {
     width: 100%;
     height: 45%;
     background: #3495ce; }
-  .user-card__link {
+  .user-info-card__link {
     color: #efefef;
     text-decoration: none; }
-  .user-card__name {
+  .user-info-card__name {
     font-size: 2rem;
     font-weight: 600;
     margin: 0; }
-    .user-card__name:hover {
+    .user-info-card__name:hover {
       text-decoration: underline; }
-  .user-card__handle {
+  .user-info-card__handle {
     font-size: 1.5rem;
     font-weight: 100;
     color: #8899a6;
     margin: 0; }
-    .user-card__handle:hover {
+    .user-info-card__handle:hover {
       text-decoration: underline; }
-  .user-card__image {
+  .user-info-card__image {
     border-radius: 100%;
     width: 7.5rem;
     border: #212121 2px solid;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     margin: 0 1rem 0 0; }
-  .user-card__header {
+  .user-info-card__header {
     position: relative;
     z-index: 2;
     display: -ms-flexbox;
@@ -862,21 +862,21 @@ a:visited {
     -ms-flex-align: end;
         align-items: flex-end;
     margin-top: 3rem; }
-  .user-card__stats {
+  .user-info-card__stats {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around; }
-    .user-card__stats--title {
+    .user-info-card__stats--title {
       font-weight: 500;
       margin: 2rem 0 0 0;
       font-size: 1.3rem;
       color: #8899a6; }
-    .user-card__stats--value {
+    .user-info-card__stats--value {
       margin: 0.25rem 0 0 0;
       color: #3495ce;
       font-size: 2rem; }
-    .user-card__stats--item:hover .user-card__stats--title {
+    .user-info-card__stats--item:hover .user-card__stats--title {
       color: #3495ce; }
 
 .tweet-card {
@@ -1166,5 +1166,27 @@ a:visited {
   .tweet-btn:disabled, .follow-btn:disabled {
     background: #66889c;
     cursor: not-allowed; }
+
+.follow-btn {
+  color: transparent; }
+  .follow-btn:before {
+    color: #efefef;
+    content: 'Follow';
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    font-size: 1.5rem;
+    top: 0;
+    left: 0; }
+  .follow-btn--active:before {
+    content: 'Following'; }
+  .follow-btn--active:hover {
+    background: #ac002b; }
+    .follow-btn--active:hover:before {
+      content: 'Unfollow'; }
 
 /*# sourceMappingURL=style.css.map*/

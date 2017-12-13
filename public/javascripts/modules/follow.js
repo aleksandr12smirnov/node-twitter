@@ -10,7 +10,7 @@ function ajaxFollow(e) {
     .post(this.action)
     .then(res => {
       // toggle active class and set users followers to match the data sent back
-      this.follow.classList.toggle('.follow-btn--followed');
+      this.follow.classList.toggle('follow-btn--active');
       $(this.dataset.target).textContent = res.data.followers.length;
     })
     .catch(console.error);

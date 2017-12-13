@@ -33,6 +33,7 @@ router.get('/logout', authController.isLoggedIn, authController.logout);
 */
 
 router.get('/:handle', userController.showUserTweets);
+router.get('/:handle/following', userController.showUserFollowing);
 
 /* 
   Tweet Routes
