@@ -1,6 +1,5 @@
 mixin followBtn(profile, followSelector = '') 
-  form.follow-form(action=`/api/user/${profile._id}/follow` method="POST" data-target=followSelector)
-    - const followString = user.following.map(obj => obj.toString());
-    - const followBtnClass = followString.includes(profile._id.toString()) ? 'follow-btn--active' : '';
-
+  - const followString = user.following.map(obj => obj.toString());
+  - const followBtnClass = followString.includes(profile._id.toString()) ? 'follow-btn--active' : '';
+  form.follow-form(action=`/api/user/${profile._id}/follow` method="POST" data-target=followSelector) 
     button.follow-btn(type="submit" name="follow" class=followBtnClass)

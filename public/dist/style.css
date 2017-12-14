@@ -709,6 +709,7 @@ form {
       background: #141414; }
 
 .follow-form {
+  background: transparent;
   padding: 0; }
   .follow-form button {
     cursor: pointer; }

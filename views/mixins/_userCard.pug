@@ -1,7 +1,17 @@
 include _followBtn
 
-mixin userCard(user)
+mixin userCard(target)
   .user-card
+    .user-card__banner
+
     .user-card__header
-    .user-card__header--aside
-      +followBtn(user)
+      a(href=`/${target.handle}`).user-card__link
+        img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-card__image
+      .user-card__header--aside
+        +followBtn(target)
+    .user-card__content
+      a(href=`/${target.handle}`).user-card__link
+        p.user-card__name= target.name
+      a(href=`/${target.handle}`).user-card__link
+        p.user-card__name @#{target.handle}
+      p.user-card__bio= profile.bio || "Test Bio" 
