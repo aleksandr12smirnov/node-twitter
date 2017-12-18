@@ -78,6 +78,14 @@
   }
 }
 
+.user-card {
+  height: 29rem;
+  width: 29rem;
+  display: flex;
+  background: $container1;
+  box-shadow: $shadow1;
+}
+
 .tweet-card {
   width: 60rem;
   padding: 1rem 1.25rem;

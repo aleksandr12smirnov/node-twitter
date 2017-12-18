@@ -5,6 +5,6 @@ include ../mixins/_userCard
 block content
   .flex-container__item
     ul.user-list
-      each person in profile.following
+      each person in profile.followers
         li.user-list__item
           +userCard(person)

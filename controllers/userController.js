@@ -83,6 +83,7 @@ const getProfileAndShowPage = (field, path) => {
 
 exports.showUserTweets = getProfileAndShowPage('tweets', 'tweets');
 exports.showUserFollowing = getProfileAndShowPage('following', 'following');
+exports.showUserFollowers = getProfileAndShowPage('followers', 'followers');
 
 exports.followUser = async (req, res) => {
   // turn Id Objects into strings for searching
