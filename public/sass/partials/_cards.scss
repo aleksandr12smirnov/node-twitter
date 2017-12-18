@@ -84,6 +84,47 @@
   display: flex;
   background: $container1;
   box-shadow: $shadow1;
+  flex-direction: column;
+  &__banner {
+    background: $accent;
+    height: 9rem;
+  }
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-top: -3rem;
+  }
+  &__content {
+    padding: 0 1rem;
+  }
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__image {
+    height: 7rem;
+    border-radius: 100%;
+    border: 3px solid $container1;
+    box-shadow: $shadow1;
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0 0;
+  }
+  &__handle {
+    color: $text-color2;
+    font-size: 1.5rem;
+    margin: 0.2rem 0 0 0;
+  }
+  &__bio {
+    font-size: 1.5rem;
+  }
 }
 
 .tweet-card {

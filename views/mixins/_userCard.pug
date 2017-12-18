@@ -3,15 +3,15 @@ include _followBtn
 mixin userCard(target)
   .user-card
     .user-card__banner
-
+      if(target.banner)
+        img(src=`${target.banner}` alt="Profile banner image").user-casrd__banner-image 
     .user-card__header
       a(href=`/${target.handle}`).user-card__link
         img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-card__image
-      .user-card__header--aside
-        +followBtn(target)
+      +followBtn(target)
     .user-card__content
       a(href=`/${target.handle}`).user-card__link
         p.user-card__name= target.name
       a(href=`/${target.handle}`).user-card__link
-        p.user-card__name @#{target.handle}
-      p.user-card__bio= profile.bio || "Test Bio" 
+        p.user-card__handle @#{target.handle}
+      p.user-card__bio= profile.bio || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eaque facilis quasi distinctio fugiat maxime nobis doloremque culpa obcaecati quia? Placeat tempore ea et optio sequi accusantium nihil sapiente mollitia!" 
