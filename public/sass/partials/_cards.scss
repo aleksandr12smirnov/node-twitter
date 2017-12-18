@@ -115,7 +115,7 @@
   &__name {
     font-size: 2rem;
     font-weight: 600;
-    margin: 0.5rem 0 0 0;
+    margin: 0.3rem 0 0 0;
   }
   &__handle {
     color: $text-color2;
@@ -124,6 +124,7 @@
   }
   &__bio {
     font-size: 1.5rem;
+    margin: 0.4rem 0 0 0;
   }
 }
 
@@ -178,17 +179,18 @@
   }
   &__controls {
     display: flex;
-    span {
-      width: 8rem;
-      display: flex;
-      align-items: center;
-      i {
-        font-size: 1.75rem;
-        color: $text-color2;
-      }
-      p {
-        margin: 0.5rem 0;
-      }
+  }
+  &__control-item {
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    &--icon {
+      font-size: 1.75rem !important;
+      color: $text-color2;
+    }
+    &--value {
+      margin: 0 0 0 0.5rem;
+      color: $text-color2;
     }
   }
 }

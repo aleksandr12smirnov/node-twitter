@@ -8,7 +8,8 @@ mixin userCard(target)
     .user-card__header
       a(href=`/${target.handle}`).user-card__link
         img(src=`${target.avatar ? '/uploads/' + target.avatar : '/images/avatar/user.jpg'}`).user-card__image
-      +followBtn(target)
+      if(!user._id.equals(target._id))
+        +followBtn(target)
     .user-card__content
       a(href=`/${target.handle}`).user-card__link
         p.user-card__name= target.name

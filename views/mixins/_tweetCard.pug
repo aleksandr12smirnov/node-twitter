@@ -24,13 +24,13 @@ mixin tweetCard(tweet, author = user)
           if(tweet.image)
             img(src=`/uploads/${tweet.image}`).tweet-card__image
         .tweet-card__controls
-          span.tweet-card__controls--replies
-            i.fa.fa-comments-o
-            p.tweet-card__controls--replies-count= tweet.replies.length > 0 ? tweet.replies.length: ''
-          span.tweet-card__controls--retweet
-            i.fa.fa-retweet
-            p.tweet-card__controls--retweet-count= tweet.retweets > 0 ? tweet.retweets : ''
-          span.tweet-card__controls--like
-            i.fa.fa-heart-o
-            p.tweet-card__controls--like-count= tweet.likes > 0 ? tweet.likes : ''
+          span.tweet-card__control-item
+            i.fa.fa-comments-o.tweet-card__control-item--icon
+            p.tweet-card__control-item--value= tweet.replies.length > 0 ? tweet.replies.length: h.formatNumber('15250')
+          span.tweet-card__control-item
+            i.fa.fa-retweet.tweet-card__control-item--icon
+            p.tweet-card__control-item--value= tweet.retweets > 0 ? tweet.retweets : '100'
+          span.tweet-card__control-item
+            i.fa.fa-heart-o.tweet-card__control-item--icon
+            p.tweet-card__control-item--value= tweet.likes > 0 ? tweet.likes : '10'
           span.tweet-card__controls--message

@@ -16,6 +16,7 @@ exports.icon = name => fs.readFileSync(`./public/images/icons/${name}.svg`);
 
 // format large numbers into shortend strings
 exports.formatNumber = num => {
+  num = Number(num);
   if (num > 1000) {
     return (num / 1000).toFixed(1) + 'K';
   }
