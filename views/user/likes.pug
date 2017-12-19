@@ -1,0 +1,11 @@
+extends userLayout
+
+include ../mixins/_tweetCard
+
+block content
+  .flex-container__item
+    ul.feed
+      each tweet in profile.likes
+        li.feed__item
+          +tweetCard(tweet)
+  .flex-container__item

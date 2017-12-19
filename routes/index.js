@@ -35,6 +35,7 @@ router.get('/logout', authController.isLoggedIn, authController.logout);
 router.get('/:handle', catchErrors(userController.showUserTweets));
 router.get('/:handle/following', catchErrors(userController.showUserFollowing));
 router.get('/:handle/followers', catchErrors(userController.showUserFollowers));
+router.get('/:handle/likes', catchErrors(userController.showUserLikes));
 
 /* 
   Tweet Routes

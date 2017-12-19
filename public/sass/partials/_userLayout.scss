@@ -168,5 +168,6 @@
   &__item {
     width: calc(100% / 3);
     margin-bottom: 1rem;
+    min-width: 30rem;
   }
 }

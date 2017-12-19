@@ -21,19 +21,19 @@ block content
                  li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}` ? "hover-highlight--active" : ""))
                   a.user-banner__nav-link(href=`/${profile.handle}`)
                     span.user-banner__nav-title Tweets
-                    span.user-banner__nav-value= profile.tweets.length
+                    span.user-banner__nav-value= h.formatNumber(profile.tweets.length)
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/following` ? "hover-highlight--active" : ""))
                 a.user-banner__nav-link(href=`/${profile.handle}/following`)
                   span.user-banner__nav-title Following
-                  span.user-banner__nav-value(id=`following-count-${profile._id}`)= profile.following.length
+                  span.user-banner__nav-value(id=`following-count-${profile._id}`)= h.formatNumber(profile.following.length)
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/followers` ? "hover-highlight--active" : ""))
                 a.user-banner__nav-link(href=`/${profile.handle}/followers`)
                   span.user-banner__nav-title Followers
-                  span.user-banner__nav-value(id=`followers-count-${profile._id}`)= profile.followers.length
+                  span.user-banner__nav-value(id=`followers-count-${profile._id}`)= h.formatNumber(profile.followers.length)
               li.user-banner__nav-item.hover-highlight(class=(currentPath == `/${profile.handle}/likes` ? "hover-highlight--active" : ""))
                 a.user-banner__nav-link(href=`/${profile.handle}/likes`)
                   span.user-banner__nav-title Likes
-                  span.user-banner__nav-value= profile.likes.length
+                  span.user-banner__nav-value= h.formatNumber(profile.likes.length)
           .flex-container__item
             .user-banner__nav-btns
               if(isOwner)

@@ -11,11 +11,11 @@ mixin userInfoCard(target = user)
     .user-info-card__stats
       a(href=`/${target.handle}`).user-info-card__link.user-info-card__stats--item
         p.user-info-card__stats--title Tweets
-        p.user-info-card__stats--value= target.tweets.length
+        p.user-info-card__stats--value= h.formatNumber(target.tweets.length)
       a(href=`/${target.handle}/following`).user-info-card__link.user-info-card__stats--item
         p.user-info-card__stats--title Following
-        p.user-info-card__stats--value= target.following.length
+        p.user-info-card__stats--value= h.formatNumber(target.following.length)
       a(href=`/${target.handle}/followers`).user-info-card__link.user-info-card__stats--item
         p.user-info-card__stats--title Followers
-        p.user-info-card__stats--value= target.followers.length
+        p.user-info-card__stats--value= h.formatNumber(target.followers.length)
 

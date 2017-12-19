@@ -4,6 +4,8 @@ const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
+const promisify = require('es6-promisify');
+const fs = require('fs');
 
 const multerOptions = {
   storage: multer.memoryStorage(),
@@ -61,6 +63,10 @@ exports.deleteTweet = async (req, res) => {
     const user = await User.findById(req.user._id);
     // remove tweet from users tweet list
     await user.tweets.pull(tweet._id);
+    // if there is a image attached to tweet delete it from server
+    if (tweet.image) {
+      await fs.unlink(`./public/uploads/${tweet.image}`);
+    }
     // delete tweet
     await tweet.remove();
     // save user

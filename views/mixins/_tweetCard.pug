@@ -26,11 +26,11 @@ mixin tweetCard(tweet, author = user)
         .tweet-card__controls
           span.tweet-card__control-item
             i.fa.fa-comments-o.tweet-card__control-item--icon
-            p.tweet-card__control-item--value= tweet.replies.length > 0 ? tweet.replies.length: h.formatNumber('15250')
+            p.tweet-card__control-item--value= tweet.replies.length > 0 ? h.formatNumber(tweet.replies.length) : ''
           span.tweet-card__control-item
             i.fa.fa-retweet.tweet-card__control-item--icon
-            p.tweet-card__control-item--value= tweet.retweets > 0 ? tweet.retweets : '100'
+            p.tweet-card__control-item--value= tweet.retweets > 0 ? h.formatNumber(tweet.retweets) : ''
           span.tweet-card__control-item
             i.fa.fa-heart-o.tweet-card__control-item--icon
-            p.tweet-card__control-item--value= tweet.likes > 0 ? tweet.likes : '10'
+            p.tweet-card__control-item--value= tweet.likes > 0 ? h.formatNumber(tweet.likes) : ''
           span.tweet-card__controls--message
