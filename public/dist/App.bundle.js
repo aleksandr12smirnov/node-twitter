@@ -1862,13 +1862,69 @@ var _follow = __webpack_require__(11);
 
 var _follow2 = _interopRequireDefault(_follow);
 
+var _likeTweet = __webpack_require__(39);
+
+var _likeTweet2 = _interopRequireDefault(_likeTweet);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
 (0, _dropdowns2.default)((0, _bling.$$)('.dropdown'));
-(0, _bling.$)('.follow-form').on('submit', _follow2.default);
+(0, _bling.$$)('.follow-form').on('submit', _follow2.default);
+(0, _bling.$$)('.tweet-card__likes').on('click', _likeTweet2.default);
 
 // TODO Add Clipboard copy of tweet url
+
+/***/ }),
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _axios = __webpack_require__(13);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _bling = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function ajaxLike(e) {
+  var _this = this;
+
+  // post to api
+  _axios2.default.post(this.dataset.action).then(function (res) {
+    // toggle active class and set users followers to match the data sent back
+    _this.classList.toggle('tweet-card__control-item--active');
+    var element = _this.querySelector('.tweet-card__control-item--value');
+    if (!isNaN(Number(element.textContent)) || element.textContent === '') {
+      // debugger;
+      if (![].concat(_toConsumableArray(_this.classList)).includes('tweet-card__control-item--active')) {
+        if (element.textContent !== '') {
+          element.textContent = Number(element.textContent) - 1;
+        }
+      } else {
+        element.textContent = Number(element.textContent) + 1;
+      }
+    }
+  }).catch(console.error);
+}
+
+exports.default = ajaxLike;
 
 /***/ })
 /******/ ]);

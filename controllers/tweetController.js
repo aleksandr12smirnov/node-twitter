@@ -10,6 +10,7 @@ const fs = require('fs');
 const multerOptions = {
   storage: multer.memoryStorage(),
   fileFilter(req, file, next) {
+    // if the file isnt an image reject it
     const isPhoto = file.mimetype.startsWith('image/');
     if (isPhoto) {
       next(null, true);
@@ -78,4 +79,26 @@ exports.deleteTweet = async (req, res) => {
     req.flash('error', 'You do not have permission to do that!');
     res.redirect('back');
   }
+};
+
+exports.likeTweet = async (req, res) => {
+  // turn Id Objects into strings for searching
+  const likes = req.user.likes.map(obj => obj.toString());
+
+  // if target is in users likes
+  const userHasLiked = likes.includes(req.params.id);
+
+  // find user and add target to likes list
+  const user = await User.findByIdAndUpdate(
+    req.user._id,
+    { [userHasLiked ? '$pull' : '$addToSet']: { likes: req.params.id } },
+    { new: true }
+  );
+
+  await Tweet.findByIdAndUpdate(
+    { _id: req.params.id },
+    { $inc: { likes: userHasLiked ? -1 : 1 } }
+  );
+
+  res.json(user);
 };

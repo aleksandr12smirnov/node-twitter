@@ -184,13 +184,23 @@
     width: 8rem;
     display: flex;
     align-items: center;
+    background: transparent;
+    border: 0;
+    color: $text-color2;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+    &--active {
+      color: $text-color--success;
+    }
     &--icon {
       font-size: 1.75rem !important;
-      color: $text-color2;
+      color: inherit;
     }
     &--value {
       margin: 0 0 0 0.5rem;
-      color: $text-color2;
+      color: inherit;
     }
   }
 }

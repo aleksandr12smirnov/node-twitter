@@ -66,3 +66,9 @@ router.post(
   authController.isLoggedIn,
   userController.followUser
 );
+
+router.post(
+  '/api/tweet/:id/like',
+  authController.isLoggedIn,
+  tweetController.likeTweet
+);

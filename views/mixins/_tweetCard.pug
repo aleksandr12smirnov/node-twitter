@@ -24,13 +24,14 @@ mixin tweetCard(tweet, author = user)
           if(tweet.image)
             img(src=`/uploads/${tweet.image}`).tweet-card__image
         .tweet-card__controls
-          span.tweet-card__control-item
+          button.tweet-card__control-item
             i.fa.fa-comments-o.tweet-card__control-item--icon
             p.tweet-card__control-item--value= tweet.replies.length > 0 ? h.formatNumber(tweet.replies.length) : ''
-          span.tweet-card__control-item
+          button.tweet-card__control-item
             i.fa.fa-retweet.tweet-card__control-item--icon
             p.tweet-card__control-item--value= tweet.retweets > 0 ? h.formatNumber(tweet.retweets) : ''
-          span.tweet-card__control-item
+          - const likeString = user.likes.map(obj => obj.toString());
+          - const likeBtnClass = likeString.includes(tweet._id.toString()) ? 'tweet-card__control-item--active' : '';
+          button.tweet-card__likes.tweet-card__control-item(data-action=`/api/tweet/${tweet._id}/like` class=likeBtnClass)
             i.fa.fa-heart-o.tweet-card__control-item--icon
             p.tweet-card__control-item--value= tweet.likes > 0 ? h.formatNumber(tweet.likes) : ''
-          span.tweet-card__controls--message

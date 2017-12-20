@@ -979,13 +979,21 @@ a:visited {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
-        align-items: center; }
+        align-items: center;
+    background: transparent;
+    border: 0;
+    color: #8899a6;
+    cursor: pointer; }
+    .tweet-card__control-item:focus {
+      outline: 0; }
+    .tweet-card__control-item--active {
+      color: #3a9ed8; }
     .tweet-card__control-item--icon {
       font-size: 1.75rem !important;
-      color: #8899a6; }
+      color: inherit; }
     .tweet-card__control-item--value {
       margin: 0 0 0 0.5rem;
-      color: #8899a6; }
+      color: inherit; }
 
 .feed {
   display: -ms-flexbox;
@@ -1054,7 +1062,6 @@ a:visited {
       height: 100%;
       margin: 0;
       padding: 0;
-      width: 100vw;
       max-width: 600rem; }
     .user-banner__nav-item {
       height: 100%;
