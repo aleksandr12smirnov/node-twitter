@@ -54,6 +54,8 @@ form {
   }
   &__input {
     border-radius: 1rem;
+    max-width: 56rem;
+    min-width: 56rem;
   }
   &__controls {
     display: flex;

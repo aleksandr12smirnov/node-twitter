@@ -693,7 +693,9 @@ form {
   .tweet-form__body {
     margin-bottom: 1.5rem; }
   .tweet-form__input {
-    border-radius: 1rem; }
+    border-radius: 1rem;
+    max-width: 56rem;
+    min-width: 56rem; }
   .tweet-form__controls {
     display: -ms-flexbox;
     display: flex;
@@ -1054,7 +1056,8 @@ a:visited {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
-        justify-content: center; }
+        justify-content: center;
+    margin-bottom: 1rem; }
     .user-banner__nav-list {
       list-style-type: none;
       display: -ms-flexbox;
@@ -1117,7 +1120,8 @@ a:visited {
   background: #212121;
   margin-bottom: 0.25rem;
   padding: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-top: 0; }
   .user-tweet-nav__item {
     padding: 0 1.5rem;
     display: -ms-flexbox;
@@ -1154,6 +1158,7 @@ a:visited {
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
+  margin: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
   .user-list__item {

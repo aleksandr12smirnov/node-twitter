@@ -55,6 +55,7 @@
     height: 6rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 1rem;
     &-list {
       list-style-type: none;
       display: flex;
@@ -122,6 +123,7 @@
   margin-bottom: 0.25rem;
   padding: 0;
   box-shadow: $shadow1;
+  margin-top: 0;
   &__item {
     padding: 0 1.5rem;
     display: flex;
@@ -163,6 +165,7 @@
   padding: 0;
   display: flex;
   list-style-type: none;
+  margin: 0;
   flex-wrap: wrap;
   &__item {
     width: calc(100% / 3);
