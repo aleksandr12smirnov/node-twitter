@@ -27,8 +27,8 @@ exports.homePage = async (req, res) => {
 
   // sort tweets by date
   tweets.sort(function(a, b) {
-    var keyA = new Date(a.created),
-      keyB = new Date(b.created);
+    let keyA = new Date(a.created);
+    let keyB = new Date(b.created);
     // Compare the 2 dates
     if (keyA < keyB) return 1;
     if (keyA > keyB) return -1;
