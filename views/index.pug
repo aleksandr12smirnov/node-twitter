@@ -15,7 +15,7 @@ block content
         ul.feed
           each tweet in tweets
             li.feed__item
-              +tweetCard(tweet)
+              +tweetCard(tweet, tweet.author)
               
       .tri-grid-container__item
         .card.footer

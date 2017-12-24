@@ -10,7 +10,7 @@ const tweetController = require('../controllers/tweetController');
     Index Route
 */
 
-router.get('/', appController.index);
+router.get('/', appController.index, appController.homePage);
 
 /*
     Auth Routes (Login Logout Register)

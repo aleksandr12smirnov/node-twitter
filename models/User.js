@@ -3,6 +3,7 @@ mongoose.Promise = global.Promise;
 const validator = require('validator');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
+const deepPopulate = require('mongoose-deep-populate')(mongoose);
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -62,5 +63,6 @@ const userSchema = new mongoose.Schema({
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(mongodbErrorHandler);
+userSchema.plugin(deepPopulate);
 
 module.exports = mongoose.model('User', userSchema);

@@ -64,12 +64,12 @@ exports.register = async (req, res, next) => {
   next();
 };
 
-const getProfileAndShowPage = (field, path) => {
+const getProfileAndShowPage = (path, populateOptions) => {
   return async (req, res, next) => {
     const username = req.params.handle.toLowerCase();
 
     // find profile and make tweets available
-    const profile = await User.findOne({ username }).populate(field);
+    const profile = await User.findOne({ username }).populate(populateOptions);
 
     // if user cant be found go to next middleware
     if (!profile) {
@@ -81,10 +81,23 @@ const getProfileAndShowPage = (field, path) => {
   };
 };
 
-exports.showUserTweets = getProfileAndShowPage('tweets', 'tweets');
-exports.showUserFollowing = getProfileAndShowPage('following', 'following');
-exports.showUserFollowers = getProfileAndShowPage('followers', 'followers');
-exports.showUserLikes = getProfileAndShowPage('likes', 'likes');
+exports.showUserTweets = getProfileAndShowPage('tweets', {
+  path: 'tweets',
+  populate: { path: 'author', model: 'User' }
+});
+
+exports.showUserFollowing = getProfileAndShowPage('following', {
+  path: 'following'
+});
+
+exports.showUserFollowers = getProfileAndShowPage('followers', {
+  path: 'followers'
+});
+
+exports.showUserLikes = getProfileAndShowPage('likes', {
+  path: 'likes',
+  populate: { path: 'author', model: 'User' }
+});
 
 exports.followUser = async (req, res) => {
   // turn Id Objects into strings for searching
