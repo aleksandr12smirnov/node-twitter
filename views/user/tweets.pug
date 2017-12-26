@@ -6,13 +6,13 @@ include ../mixins/_tweetForm
 block content
   if(profile.tweets.length)
     .flex-container__item
-      ul.user-tweet-nav
-        li.user-tweet-nav__item
-          a.user-tweet-nav__link(href=`/${profile.handle}` class=(currentPath == `/${profile.handle}` ? "user-tweet-nav__link--active" : "")) Tweets
-        li.user-tweet-nav__item
-          a.user-tweet-nav__link(href=`/${profile.handle}/with_replies` class=(currentPath == `/${profile.handle}/with_replies` ? "user-tweet-nav__link--active" : "")) Tweets & replies
-        li.user-tweet-nav__item
-          a.user-tweet-nav__link(href=`/${profile.handle}/media` class=(currentPath == `/${profile.handle}/media` ? "user-tweet-nav__link--active" : "")) Media
+      //- ul.user-tweet-nav
+      //-   li.user-tweet-nav__item
+      //-     a.user-tweet-nav__link(href=`/${profile.handle}` class=(currentPath == `/${profile.handle}` ? "user-tweet-nav__link--active" : "")) Tweets
+      //-   li.user-tweet-nav__item
+      //-     a.user-tweet-nav__link(href=`/${profile.handle}/with_replies` class=(currentPath == `/${profile.handle}/with_replies` ? "user-tweet-nav__link--active" : "")) Tweets & replies
+      //-   li.user-tweet-nav__item
+      //-     a.user-tweet-nav__link(href=`/${profile.handle}/media` class=(currentPath == `/${profile.handle}/media` ? "user-tweet-nav__link--active" : "")) Media
           
       if(isOwner)
         +tweetForm()

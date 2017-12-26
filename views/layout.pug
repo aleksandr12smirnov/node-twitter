@@ -17,15 +17,15 @@ html
               a.nav__link(href="/")
                 i.material-icons.nav__link--icon home
                 span.nav__link--text Home
-            if user
-              li.nav__item.hover-highlight(class=(currentPath.startsWith("/notifications") ? "hover-highlight--active" : ""))
-                a.nav__link(href="/notifications")
-                  i.material-icons.nav__link--icon notifications
-                  span.nav__link--text Notifications
-              li.nav__item.hover-highlight(class=(currentPath.startsWith("/messages") ? "hover-highlight--active" : ""))
-                a.nav__link(href="/messages")
-                  i.material-icons.nav__link--icon email
-                  span.nav__link--text Messages
+            //- if user
+            //-   li.nav__item.hover-highlight(class=(currentPath.startsWith("/notifications") ? "hover-highlight--active" : ""))
+            //-     a.nav__link(href="/notifications")
+            //-       i.material-icons.nav__link--icon notifications
+            //-       span.nav__link--text Notifications
+            //-   li.nav__item.hover-highlight(class=(currentPath.startsWith("/messages") ? "hover-highlight--active" : ""))
+            //-     a.nav__link(href="/messages")
+            //-       i.material-icons.nav__link--icon email
+            //-       span.nav__link--text Messages
           .nav__brand
             a.nav__link(href="/")
               i.fa.fa-circle.fa-2x(aria-hidden="true")
