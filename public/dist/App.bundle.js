@@ -1910,14 +1910,50 @@ var _likeTweet = __webpack_require__(13);
 
 var _likeTweet2 = _interopRequireDefault(_likeTweet);
 
+var _toggleScreen = __webpack_require__(39);
+
+var _toggleScreen2 = _interopRequireDefault(_toggleScreen);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _disableButton2.default)((0, _bling.$)('#tweet-input'), (0, _bling.$)('#tweet-submit'));
 (0, _dropdowns2.default)((0, _bling.$$)('.dropdown'));
 (0, _bling.$$)('.follow-form').on('submit', _follow2.default);
 (0, _bling.$$)('.tweet-card__likes').on('click', _likeTweet2.default);
+(0, _toggleScreen2.default)((0, _bling.$)('#tweet-form-btn'), (0, _bling.$)('.tweet-form-screen'), (0, _bling.$)('.tweet-form-screen > *'));
 
 // TODO Add Clipboard copy of tweet url
+
+/***/ }),
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function toggleScreen(button, screen, inner) {
+  console.log('ran');
+  function toggleClass() {
+    screen.classList.toggle('screen--active');
+  }
+
+  button.on('click', toggleClass);
+  screen.on('click', toggleClass);
+  inner.on('click', function (e) {
+    return e.stopPropagation();
+  });
+}
+
+exports.default = toggleScreen;
 
 /***/ })
 /******/ ]);
