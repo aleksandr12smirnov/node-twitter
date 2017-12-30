@@ -72,3 +72,5 @@ router.post(
   authController.isLoggedIn,
   tweetController.likeTweet
 );
+
+router.get('/api/test', appController.testRoute);

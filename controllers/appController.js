@@ -37,3 +37,7 @@ exports.homePage = async (req, res) => {
 
   res.render('index', { title: 'index', tweets });
 };
+
+exports.testRoute = async (req, res) => {
+  Tweet.findOne().populate('replies');
+};

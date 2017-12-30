@@ -1,4 +1,6 @@
-function disableButton(input, button) {
+function disableTweetButton(form) {
+  const input = form.querySelector('#tweet-input');
+  const button = form.querySelector('#tweet-submit');
   if (input) {
     input.on('keyup', function() {
       if (input.value.length > 0) {
@@ -10,4 +12,4 @@ function disableButton(input, button) {
   }
 }
 
-export default disableButton;
+export default disableTweetButton;

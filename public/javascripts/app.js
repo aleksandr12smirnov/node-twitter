@@ -1,13 +1,13 @@
 import '../sass/style.scss';
 
 import { $, $$ } from './modules/bling';
-import disableButton from './modules/disableButton';
+import disableTweetButton from './modules/disableButton';
 import bindDropdowns from './modules/dropdowns';
 import ajaxFollow from './modules/follow';
 import ajaxLike from './modules/likeTweet';
 import toggleScreen from './modules/toggleScreen';
 
-disableButton($('#tweet-input'), $('#tweet-submit'));
+$$('.tweet-form').forEach(disableTweetButton);
 bindDropdowns($$('.dropdown'));
 $$('.follow-form').on('submit', ajaxFollow);
 $$('.tweet-card__likes').on('click', ajaxLike);
