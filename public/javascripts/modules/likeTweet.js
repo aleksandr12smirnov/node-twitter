@@ -9,8 +9,8 @@ function ajaxLike(e) {
       // toggle active class and set users followers to match the data sent back
       this.classList.toggle('tweet-card__control-item--active');
       let element = this.querySelector('.tweet-card__control-item--value');
+      // if content is actually a number and isnt empty check if it has the active class
       if (!isNaN(Number(element.textContent)) || element.textContent === '') {
-        // debugger;
         if (![...this.classList].includes('tweet-card__control-item--active')) {
           if (element.textContent !== '') {
             element.textContent = Number(element.textContent) - 1;
