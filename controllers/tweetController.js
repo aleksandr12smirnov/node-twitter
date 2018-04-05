@@ -95,10 +95,13 @@ exports.likeTweet = async (req, res) => {
     { new: true }
   );
 
-  await Tweet.findByIdAndUpdate(
-    { _id: req.params.id },
-    { $inc: { likes: userHasLiked ? -1 : 1 } }
-  );
+  if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+    // Yes, it's a valid ObjectId, proceed with `findByIdAndUpdate` call.
+    await Tweet.findByIdAndUpdate(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $inc: { likes: userHasLiked ? -1 : 1 } }
+    );
+  }
 
   res.json(user);
 };

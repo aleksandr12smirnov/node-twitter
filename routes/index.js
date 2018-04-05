@@ -64,13 +64,13 @@ module.exports = router;
 router.post(
   '/api/user/:id/follow',
   authController.isLoggedIn,
-  userController.followUser
+  catchErrors(userController.followUser)
 );
 
 router.post(
   '/api/tweet/:id/like',
   authController.isLoggedIn,
-  tweetController.likeTweet
+  catchErrors(tweetController.likeTweet)
 );
 
 router.get('/api/test', appController.testRoute);

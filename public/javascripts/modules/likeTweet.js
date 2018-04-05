@@ -24,3 +24,5 @@ function ajaxLike(e) {
 }
 
 export default ajaxLike;
+
+// TODO: Fix tweet like not changing during like

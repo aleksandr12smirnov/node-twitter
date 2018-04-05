@@ -51,6 +51,9 @@ html
                       button.dropdown__link-btn.dropdown__link-btn--danger.nav__btn Logout
             if user
               button.tweet-btn#tweet-form-btn Tweet
+    block screen
+      .lightbox#tweet-form-screen
+        +tweetForm()
 
     block messages
       if Object.keys(locals.flashes).length

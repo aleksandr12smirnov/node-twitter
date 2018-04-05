@@ -526,6 +526,22 @@ body {
     color: #efefef;
     font-size: 1.25rem; }
 
+.lightbox {
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 3rem;
+  background: rgba(3, 3, 3, 0.5); }
+  .lightbox--active {
+    display: -ms-flexbox;
+    display: flex; }
+
 .top {
   -ms-grid-column: 1;
       grid-column-start: 1;

@@ -1091,6 +1091,8 @@ function ajaxLike(e) {
 
 exports.default = ajaxLike;
 
+// TODO: Fix tweet like not changing during like
+
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
@@ -1912,14 +1914,48 @@ var _likeTweet = __webpack_require__(13);
 
 var _likeTweet2 = _interopRequireDefault(_likeTweet);
 
+var _lightbox = __webpack_require__(39);
+
+var _lightbox2 = _interopRequireDefault(_lightbox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _bling.$$)('.tweet-form').forEach(_disableButton2.default);
 (0, _dropdowns2.default)((0, _bling.$$)('.dropdown'));
 (0, _bling.$$)('.follow-form').on('submit', _follow2.default);
 (0, _bling.$$)('.tweet-card__likes').on('click', _likeTweet2.default);
+(0, _lightbox2.default)((0, _bling.$)('#tweet-form-btn'), (0, _bling.$)('#tweet-form-screen'));
 
 // TODO Add Clipboard copy of tweet url
+
+/***/ }),
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+function lightbox(trigger, lightbox) {
+  var toggleBox = function toggleBox(e) {
+    // if the target is only the button or the screen itself not its children
+    if (e.target == trigger || e.target == lightbox) {
+      lightbox.classList.toggle('lightbox--active');
+    }
+  };
+  trigger.on('click', toggleBox);
+  lightbox.on('click', toggleBox);
+}
+
+exports.default = lightbox;
 
 /***/ })
 /******/ ]);
